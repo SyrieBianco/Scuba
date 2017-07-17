@@ -1,73 +1,56 @@
 *Component Hierarchy*
 
 AuthFormContainer
-  - AuthForm
+- AuthForm
+
+WelcomeContainer
+- Welcome
 
 HomeContainer
 - Home
-- Sidebar
+- NavBar
 
-NotesContainer
-- NotesHeader
-- NoteIndex
+DashboardContainer
+- Profile
+- Stats
+- Workouts
+- Routes
 
-NotebookContainer
+WorkoutIndexContainer
+- WorkoutIndexItem
+- WorkoutItemDetail
 
-- NotebookHeader
-- NoteIndex
+RouteIndexContainer
+- RouteIndexItem
+- RouteItemDetail
 
-SearchResultsContainer
-- Search
-- NoteIndex
+ProfileContainer
+- Profile
 
-TagContainer
-- NotebookHeader
-- NoteIndex
+StatsContainer
+- Stats
 
-NoteIndex
-- NoteIndexItem
-- NoteDetail
-  - NoteTools
-  - NotebookSearch
-  - Tags
-    - Tag
-  - Note
+NewWorkoutContainer
+- NewWorkout
 
-
-
-NewNoteContainer
-- NewNote
-- RTETools
-- NewNoteButton
-
-Search
-
-NewNotebook
-- NewNotebook
-
-NewTag
-- NewTag
-
-NotebookSearch
- - AutoSearch
-
-
+NewRouteContainer
+- NewRoute
 
 
 
 Routes
 
 Path	                                         Component
+
+"/landing"	                               "WelcomeContainer"
 "/sign-up"	                               "AuthFormContainer"
 "/sign-in"	                               "AuthFormContainer"
-"/home"	                                     "HomeContainer"
-"/home/note/:noteId"	                       "NotesContainer"
-"/home/notebook/:notebookId/note/:noteId"	  "NotebookContainer"
-"/home/tag/:tagId/note/:notedId"	           "TagContainer"
-"/home/search-results"	                 "SearchResultsContainer"
-"/new-note"	                                "NewNoteContainer"
-"/search"	                                        "Search"
-"/new-notebook"	                                "NewNotebook"
-"/new-tag"	                                   "NewTag"
-"/tag-search"	                                  "TagSearch"
-"/notebook-search"	                         "NotebookSearch"
+"/dashboard"                               "DashboardContainer"
+"/workouts"	                               "WorkoutIndexContainer"
+"/workouts/:workoutId"	                   "WorkoutItemDetail"
+"/routes"	                                 "RoutesIndexContainer"
+"/routes/:routeId"	                       "RouteItemDetail"
+"/stats"	                                 "StatsContainer"
+"/profile"	                               "ProfileContainer"
+"/new-route"	                             "NewRouteContainer"
+"/new-workout"	                           "NewWorkoutContainer"

@@ -24,13 +24,6 @@
       notes: "it was great",
       duration: date object,
       date: date object
-      : 1
-      tags: {
-        1: {
-          id: 1
-          name: "Coding"
-        }
-      }
     }
   }
 }
