@@ -39,17 +39,18 @@ NewDiveRouteContainer
 
 Routes
 
-Path	                                         Component
+Path	                                Component
 
-"/landing"	                               "WelcomeContainer"
-"/sign-up"	                               "AuthFormContainer"
-"/sign-in"	                               "AuthFormContainer"
-"/dashboard"                               "DashboardContainer"
-"/workouts"	                               "DiveIndexContainer"
-"/workouts/:workoutId"	                   "DiveItemDetail"
-"/routes"	                                 "DiveRoutesIndexContainer"
-"/routes/:routeId"	                       "DiveRouteItemDetail"
-"/stats"	                                 "StatsContainer"
-"/profile"	                               "ProfileContainer"
-"/new-route"	                             "NewDiveRouteContainer"
-"/new-workout"	                           "NewDiveContainer"
+"/landing"	                      "WelcomeContainer"
+"/sign-up"	                      "AuthFormContainer"
+"/sign-in"	                      "AuthFormContainer"
+bonus: "/onBoarding"              "OnBoardingContainer"
+"/dashboard"                      "DashboardContainer"
+"/dives"	                        "DiveIndexContainer"
+"/dives/:diveId"	                "DiveShowContainer"
+"/routes"	                        "DiveRoutesIndexContainer"
+"/routes/:routeId"	              "DiveRouteItemDetail"
+"/stats"	                        "StatsContainer"
+"/profile"	                      "ProfileContainer"
+"/new-route"	                    "NewDiveRouteContainer"
+"/new-dive"	                      "NewDiveContainer"

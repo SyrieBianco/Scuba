@@ -1,7 +1,5 @@
 ***********************************Developmental ReadMe**************************
 
-link other doc files in here somewhere
-
 Heroku Link: https://dyva.herokuapp.com/
 
 
@@ -27,10 +25,15 @@ Minimum Viable Product:
 
 
 Wireframes
-  - Welcome page
+  - Welcome page [Welcome Page](./wireframes/welcome_page.png)
+
   - Sign up page
   - Sign in page
-  - OnBoarding
+  - Dives index
+  - Dive route index
+  - BONUS: OnBoarding
+  - BONUS: (not yet in docs) Profile
+
 
 
 
