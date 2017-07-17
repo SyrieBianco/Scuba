@@ -18,12 +18,12 @@
 - `POST /api/session`
 - `DELETE /api/session`
 
-### Workouts
+### Dives
 all require logged in user
-- `GET /api/workouts` - index of current user's workouts
-- `POST /api/workouts` - create workout
-- `GET /api/workouts/:id`- specific workout show page
-- `DELETE /api/workouts/:id` - delete workout
+- `GET /api/dives` - index of current user's dives
+- `POST /api/dives` - create dive
+- `GET /api/dives/:id`- specific dive show page
+- `DELETE /api/dives/:id` - delete dive
 
 ### Routes
 all require logged in user
