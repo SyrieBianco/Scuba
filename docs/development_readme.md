@@ -25,13 +25,13 @@ Minimum Viable Product:
 
 
 Wireframes
-  - Welcome page [Welcome Page](./wireframes/welcome_page.png)
+  - [Welcome Page](./wireframes/welcome_page.png)
 
-  - Sign up page
-  - Sign in page
-  - Dives index
-  - Dive route index
-  - BONUS: OnBoarding
+  - [Sign up page](./wireframes/sign_up_page.png)
+  - [Sign in page](./wireframes/sign_in_page.png)
+  - [Dives index](./wireframes/dives_index_page.png)
+  - [Dive routes index](./wireframes/dive_routes_index_page.png)
+  - BONUS: [OnBoarding Page](./wireframes/onboarding_page.png)
   - BONUS: (not yet in docs) Profile
 
 
