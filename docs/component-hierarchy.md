@@ -6,23 +6,22 @@ AuthFormContainer
 WelcomeContainer
 - Welcome
 
-HomeContainer
-- Home
+AppContainer
 - NavBar
 
 DashboardContainer
 - Profile
 - Stats
-- Workouts
-- Routes
+- Dives
+- DiveRoutes
 
-WorkoutIndexContainer
-- WorkoutIndexItem
-- WorkoutItemDetail
+DiveIndexContainer
+- DiveIndexItem
+- DiveItemDetail
 
-RouteIndexContainer
-- RouteIndexItem
-- RouteItemDetail
+DiveRouteIndexContainer
+- DiveRouteIndexItem
+- DiveRouteItemDetail
 
 ProfileContainer
 - Profile
@@ -30,11 +29,11 @@ ProfileContainer
 StatsContainer
 - Stats
 
-NewWorkoutContainer
-- NewWorkout
+NewDiveContainer
+- NewDive
 
-NewRouteContainer
-- NewRoute
+NewDiveRouteContainer
+- NewDiveRoute
 
 
 
@@ -46,11 +45,11 @@ Path	                                         Component
 "/sign-up"	                               "AuthFormContainer"
 "/sign-in"	                               "AuthFormContainer"
 "/dashboard"                               "DashboardContainer"
-"/workouts"	                               "WorkoutIndexContainer"
-"/workouts/:workoutId"	                   "WorkoutItemDetail"
-"/routes"	                                 "RoutesIndexContainer"
-"/routes/:routeId"	                       "RouteItemDetail"
+"/workouts"	                               "DiveIndexContainer"
+"/workouts/:workoutId"	                   "DiveItemDetail"
+"/routes"	                                 "DiveRoutesIndexContainer"
+"/routes/:routeId"	                       "DiveRouteItemDetail"
 "/stats"	                                 "StatsContainer"
 "/profile"	                               "ProfileContainer"
-"/new-route"	                             "NewRouteContainer"
-"/new-workout"	                           "NewWorkoutContainer"
+"/new-route"	                             "NewDiveRouteContainer"
+"/new-workout"	                           "NewDiveContainer"

@@ -8,19 +8,20 @@ Heroku Link: link actual site here
 
 Minimum Viable Product:
   - Summary:
-    RunAway is a full-stack web application inspired by Strava. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+    Scuba is a full-stack web application inspired by Strava to log scuba dives, and to track and share relevant data and routes. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
   - New account creation, login, and guest/demo login
   - A production README
   - Hosting on Heroku
   - Feature List:
-    - Create Route
-    - Saving Workouts
-    - Workout Feed
-    - Workout Stats/Totals
+    - Create Dive Route
+    - Saving and Log Dives
+    - Dive Feed
+    - Dive Stats/Totals
     - Bonus: Friends
-    - Bonus: Workout Comments
+    - Bonus: Dive Comments
     - Bonus: Social Feed
+    - Bonus: Feature Tags
 
 
 
