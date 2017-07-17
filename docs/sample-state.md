@@ -8,6 +8,7 @@
       id: 1
       user_id: 1
       title: "Sample dive",
+      routePath: "routePath"
       distance: "sample d",
       elevation: "sample e",
       notes: "it was great",
@@ -33,6 +34,7 @@
       id: 1
       user_id: 1,
       title: "Sample Route",
+      routePath: "routePath"
       distance: "sample d",
       elevation: "sample e",
       notes: "it was great",
