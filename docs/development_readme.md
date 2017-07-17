@@ -2,7 +2,7 @@
 
 link other doc files in here somewhere
 
-Heroku Link: link actual site here
+Heroku Link: https://dyva.herokuapp.com/
 
 
 
@@ -27,6 +27,10 @@ Minimum Viable Product:
 
 
 Wireframes
+  - Welcome page
+  - Sign up page
+  - Sign in page
+  - OnBoarding
 
 
 
