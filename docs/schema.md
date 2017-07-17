@@ -1,4 +1,4 @@
-## users
+## Users
 column name      | data type | details
 -----------------|-----------|-----------------------
 id               | integer   | not null, primary key
@@ -8,7 +8,7 @@ password_digest  | string    | not null
 session_token    | string    | not null, indexed, unique
 profile_photo_id | integer   | foreign key (references photos), indexed
 
-## photos
+## Photos
 
 column name     | data type | details
 ----------------|-----------|-----------------------
@@ -19,7 +19,7 @@ imageTitle      | string    | not null
 imageURL        | string    | not null, indexed, unique
 notes           | string    | not null
 
-## dives
+## Dives
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -36,7 +36,7 @@ endingAirLevel  | integer   |
 date            | string    | not null
 duration        | string    | not null
 
-## routes
+## Routes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

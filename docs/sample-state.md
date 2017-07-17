@@ -1,4 +1,4 @@
-{
+```{
   currentUser: {
     id: 1,
     username: "Syrie"
@@ -43,4 +43,4 @@
       featureTags -- BONUS
     }
   }
-}
+}```
