@@ -11,7 +11,7 @@ import {
 // components
 
 import WelcomeContainer from "./welcome/welcome_container.js";
-// import SessionForm from 
+// import SessionForm from "./session_form/session";
 
 const App = () => (
   <div>
