@@ -5,7 +5,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 //test imports
-import {signup, signin, signout} from './util/session_api_util';
+import * as API from './util/session_api_util';
+import * as Action from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
@@ -17,10 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-
-  // window.signin = signin;
-  // window.signup = signup;
-  // window.signout = signout;
+  window.signin = Action.signin;
+  window.signup = Action.signup;
+  window.signout = Action.signout;
 
 
 });
