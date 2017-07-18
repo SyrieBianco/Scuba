@@ -39,6 +39,12 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+     if (nextProps.loggedIn) {
+       this.props.history.push('/');
+     }
+   }
+
 
   render() {
 
@@ -83,4 +89,4 @@ export default withRouter(SessionForm);
 
 
 
-<nav className= "session-form-nav">{this.navFormLink()}</nav>
+// <nav className= "session-form-nav">{this.navFormLink()}</nav>
