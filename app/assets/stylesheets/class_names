@@ -1,0 +1,7 @@
+sign in or sign up links:
+  - nav tag
+  - class: "signin-signup"
+
+  Welcome bar
+  - "header-group"
+  - "header-message"

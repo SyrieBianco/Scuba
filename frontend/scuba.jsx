@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
+
   // window.signin = signin;
   // window.signup = signup;
   // window.signout = signout;
