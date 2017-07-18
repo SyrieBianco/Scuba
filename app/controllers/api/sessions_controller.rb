@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
       logout
       render "api/session"
     else
-      render(json: ["Invalid login credentials."], status: 401)
+      render(json: ["No active sessions"], status: 401)
     end
   end
 end
