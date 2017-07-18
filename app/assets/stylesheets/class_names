@@ -5,3 +5,9 @@ sign in or sign up links:
   Welcome bar
   - "header-group"
   - "header-message"
+
+Session Form:
+ - div container: "session-form-container"
+ - form itself: "session-form-box"
+ - inputs: "session-form-input"
+ - submit button: "session-form-submit"
