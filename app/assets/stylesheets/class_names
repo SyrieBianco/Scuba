@@ -8,6 +8,10 @@ sign in or sign up links:
 
 Session Form:
  - div container: "session-form-container"
+ - logo and link nav bar: "session-form-nav"
  - form itself: "session-form-box"
+ - div inside form: "session-form"
+ - form header: "session-form-header"
  - inputs: "session-form-input"
- - submit button: "session-form-submit"
+ - submit button: "session-form-submit
+ "

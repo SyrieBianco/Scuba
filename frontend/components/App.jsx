@@ -10,7 +10,8 @@ import {
 
 // components
 
-import WelcomeContainer from "./welcome/welcome_container";
+import WelcomeContainer from "./welcome/welcome_container.js";
+// import SessionForm from 
 
 const App = () => (
   <div>
