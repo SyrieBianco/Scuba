@@ -41,6 +41,7 @@ figure {
 .session-link:hover {
   border: 1px solid grey;
   border-radius: 2px;
+  background: rgba(240, 240, 240, 1)
 }
 
 //landing page
@@ -91,7 +92,7 @@ figure {
  // - form itself:
  .session-form-box {
    margin: 0 auto;
-   padding: 40px;
+   padding: 60px;
  }
 
  .session-form {
@@ -140,6 +141,8 @@ figure {
    padding: 8px;
    border-radius: 2px;
    background-color: #D3D3D3;
+   color: black;
+   font-weight: lighter;
  }
 
  // - submit button:
@@ -151,4 +154,8 @@ figure {
    background-color: rgba(255, 255, 255, .5);
    text-align: center;
    color: black;
+ }
+
+ .session-form-submit:hover {
+   background-color: rgba(255, 255, 255, .75);
  }
