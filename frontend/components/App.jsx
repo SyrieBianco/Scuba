@@ -10,15 +10,17 @@ import {
 
 // components
 
-import WelcomeContainer from "./welcome/welcome_container.js";
+import NavbarContainer from "./navbar/navbar_container.js";
 import SessionFormContainer from "./session_form/session_form_container";
 
 const App = () => (
   <div>
-    <header>
-      <h1>Scuba</h1>
-      <WelcomeContainer />
-    </header>
+    <nav class ="nav-bar">
+      <figure>
+        <img className="logo" src="https://res.cloudinary.com/syriebianco/image/upload/c_scale,w_611/v1500469044/logo_v2_lwcbzf.png" alt="logo"></img>
+      </figure>
+      <NavbarContainer />
+    </nav>
 
     <Route path="/signin" component={SessionFormContainer} />
     <Route path="/signup" component={SessionFormContainer} />

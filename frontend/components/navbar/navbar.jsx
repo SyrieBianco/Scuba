@@ -21,8 +21,8 @@ const personalWelcome = (currentUser, signout) => (
       </hgroup>
 );
 
-const Welcome = ({ currentUser, signout }) => (
+const Navbar = ({ currentUser, signout }) => (
   currentUser ? personalWelcome(currentUser, signout) : sessionLinks()
 );
 
-export default Welcome;
+export default Navbar;
