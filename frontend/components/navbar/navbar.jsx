@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 
 
 const sessionLinks = () => (
-  <nav className="signin-login">
-    <Link to='/signin'>Sign In</Link> | <Link to='/signup'>Sign Up</Link>
-  </nav>
+  <ul className="signin-signup">
+    <li className="session-link">
+      <Link to='/signin'>Sign In</Link>
+  </li>
+    <li className="session-link">
+      <Link to='/signup'>Sign Up</Link>
+  </li>
+  </ul>
 );
 
 // const sessionFormHeader = () => (

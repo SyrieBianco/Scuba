@@ -1,24 +1,71 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//nav-bar
 
-.logo {
-  height: 20px;
+figure {
+  display: inline;
+}
+
+.nav-bar {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid grey;
+}
+.hero-logo {
+  height: 60px;
   width: auto;
+  margin: 10px;
+  display: inline;
+  // position: absolute;
 }
 
 .signin-signup{
-
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
 }
 
-  // Welcome bar
-.header-group {
-
+.session-link{
+  background: lightblue;
+  border: 1px solid lightblue;
+  margin: 5px 15px;
+  padding: 7px;
+  border-radius: 3px;
+}
+.session-link:hover {
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 3px;
 }
 
-.header-message {
+//landing page
+.hero-image {
+    /* The image used */
+    background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500485850/Two_divers_hj335a.jpg");
+
+    /* Set a specific height */
+    height: 100vh;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
 
 }
+// div.landing-image {
+//   height: 100%;
+//   width: 99%;
+//   background: #ffffff url("http://res.cloudinary.com/syriebianco/image/upload/v1500485850/Two_divers_hj335a.jpg") no-repeat right top;
+// }
 
 // Session Form:
 

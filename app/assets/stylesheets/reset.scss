@@ -1,4 +1,4 @@
-html, body, section, h1, h2, h3, figure, div, header, form, button, label, input, hgroup, nav, a {
+html, body, section, h1, h2, h3, figure, div, header, form, button, label, input, hgroup, nav, a, ul, li {
 
   margin: 0;
   border: 0;
@@ -10,11 +10,16 @@ html, body, section, h1, h2, h3, figure, div, header, form, button, label, input
   color: inherit;
 
   background: transparent;
+  box-sizing: content-box;
 
 }
 
 body {
+  font-family: sans-serif;
+}
 
+body, html {
+  height: 100%;
 }
 
 
