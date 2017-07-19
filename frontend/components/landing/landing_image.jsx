@@ -3,12 +3,7 @@ import React from 'react';
 class LandingImage extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state
-    //bindings
   }
-
-// instance methods
 
   render() {
     return (
