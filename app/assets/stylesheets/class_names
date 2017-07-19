@@ -1,11 +1,11 @@
 logo figure:
-logo
+"logo"
 
 sign in or sign up links:
   - nav tag
   - class: "signin-signup"
 
-  Welcome bar
+  Nav-bar
   - "header-group"
   - "header-message"
 
