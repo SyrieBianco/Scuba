@@ -5,6 +5,7 @@ logo figure:
 AuthNav:
   - "create-account"
     - "have-account"
+    - "nav-text"
     - "account-button"
 
 
@@ -12,6 +13,7 @@ AuthNav:
   - "header-group"
   - "header-message"
   - "nav-bar-logo"
+  -
 
 Session Form:
  - div container: "session-form-container"

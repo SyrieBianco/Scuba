@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 
 const landingNav = () => (
   <nav className="nav-bar">
-    <ul className="signin-signup">
-      <li className="session-link">
-        <Link to='/signin'>Log In</Link>
-      </li>
-      <li className="session-link">
-        <Link to='/signup'>Create Account</Link>
-      </li>
-    </ul>
+      <p className="nav-text">Here to join?</p>
+      <Link className="session-link" to='/signup'>Create Account</Link>
+      <Link className="session-link" to='/signin'>Log In</Link>
   </nav>
 );
 
-const sessionFormNav = () => (
-  <nav className="signin-login">
-    <Link to='/signin'>Sign In</Link> | <Link to='/signup'>Sign Up</Link>
+const sessionFormNav = (pageType) => (
+  <nav className="session-nav-bar">
+    <img className="nav-bar-logo"
+      src="http://res.cloudinary.com/syriebianco/image/upload/v1500485614/logo_v3_black_df4fiv.png"
+      alt="logo"/>
+    <Link
+      className="session-link"
+      to={'/' + pageType}>{pageType === 'signin' ? 'Sign Up' : 'Sign In'}</Link>
   </nav>
 );
 
@@ -30,7 +30,7 @@ const sessionFormNav = () => (
 
 
 const Navbar = ({ pageType }) => (
-(pageType === ('signin' || 'signup')) ? sessionFormNav() : landingNav()
+(pageType === ('signin' || 'signup')) ? sessionFormNav(pageType) : landingNav()
 );
 
 export default Navbar;

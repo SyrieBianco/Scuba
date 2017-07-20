@@ -8,6 +8,7 @@ import AuthNavbar from './auth_navbar';
 // });
 
 const mapDispatchToProps = (dispatch, { location }) => {
+  console.log(location.pathname.slice(1));
   return ({
     pageType: location.pathname.slice(1)
   });

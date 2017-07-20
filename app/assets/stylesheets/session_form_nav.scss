@@ -1,0 +1,54 @@
+@import "colors";
+// Place all the styles related to the Api::Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//nav-bar
+
+figure {
+  display: inline;
+}
+
+.nav-bar {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid grey;
+}
+
+.session-nav-bar{
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid grey;
+}
+.nav-bar-logo {
+  height: 60px;
+  width: auto;
+  margin-top: 12px;
+  display: inline;
+  // position: absolute;
+}
+
+.signin-signup{
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.session-link{
+  color: black;
+  background: white;
+  border: 1px solid $blue-grey;
+  margin: 5px 15px;
+  padding: 10px;
+  border-radius: 2px;
+}
+.session-link:hover {
+  border: 1px solid grey;
+  border-radius: 2px;
+  background: rgba(240, 240, 240, 1)
+}
