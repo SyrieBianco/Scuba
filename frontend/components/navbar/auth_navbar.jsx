@@ -22,12 +22,14 @@ const sessionFormNav = (pageType) => {
 
   return (
   <nav className="session-nav-bar">
+    <div className="dummy-div">.</div>
     <img className="nav-bar-logo"
       src="http://res.cloudinary.com/syriebianco/image/upload/v1500485614/logo_v3_black_df4fiv.png"
       alt="logo"/>
     <Link
       className="session-link"
       to={'/' + otherPage}>{otherTitle}</Link>
+    <div className="dummy-div">.</div>
   </nav>
 );
 };
