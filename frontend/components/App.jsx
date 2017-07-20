@@ -11,15 +11,18 @@ import {
 // components
 
 import NavbarContainer from "./navbar/navbar_container.js";
+import AuthNavbarContainer from "./navbar/auth_navbar_container.js";
 import SessionFormContainer from "./session_form/session_form_container";
 import LandingImage from './landing/landing_image';
 import { AuthRoute, ProtectedRoute } from '../util/router_util';
 
 const App = () => (
   <div>
+    <AuthRoute path="/" component={AuthNavbarContainer} />
     <ProtectedRoute path="/" component={NavbarContainer} />
-    <AuthRoute path="/" component={NavbarContainer} />
+
     <Route exact path="/" component={LandingImage} />
+
     <AuthRoute path="/signin" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
