@@ -17,7 +17,7 @@ const landingNav = () => (
 
 const sessionFormNav = () => (
   <nav className="signin-login">
-    <Link to='/siginin'>Sign In</Link> | <Link to='/siginup'>Sign Up</Link>
+    <Link to='/signin'>Sign In</Link> | <Link to='/signup'>Sign Up</Link>
   </nav>
 );
 
@@ -29,5 +29,8 @@ const sessionFormNav = () => (
 // };
 
 
+const Navbar = ({ pageType }) => (
+(pageType === ('signin' || 'signup')) ? sessionFormNav() : landingNav()
+);
 
-export default landingNav;
+export default Navbar;

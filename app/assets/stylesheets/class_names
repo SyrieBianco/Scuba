@@ -11,6 +11,7 @@ AuthNav:
   Nav-bar
   - "header-group"
   - "header-message"
+  - "nav-bar-logo"
 
 Session Form:
  - div container: "session-form-container"
