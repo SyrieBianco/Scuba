@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      [field]: e.target.value
     });
   }
 
@@ -52,6 +52,18 @@ class SessionForm extends React.Component {
      }
    }
 
+   renderErrors(){
+         return(
+             <ul className="session-errors">
+                 {this.props.errors.map( (error, i) => (
+                     <li key={`error-${i}`}>
+                         {error}
+                     </li>
+                 ))}
+             </ul>
+         );
+     }
+
 
   render() {
 
@@ -61,6 +73,7 @@ class SessionForm extends React.Component {
           <div className="session-form">
             <h1 className="session-form-header">{this.formHeader()}</h1>
               <button
+                type="buttons"
                 className="session-form-submit"
                 onClick={this.handleDemo}>
                 Demo Log In
@@ -81,6 +94,7 @@ class SessionForm extends React.Component {
                   className="session-form-input"
                   />
               </div>
+            <label className="login-errors">{ this.renderErrors() }</label>
             <input type="submit" value="Submit"
               className="session-form-submit"/>
 

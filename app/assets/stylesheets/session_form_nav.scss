@@ -9,7 +9,7 @@ figure {
 }
 
 .nav-bar {
-  height: 10%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@ figure {
 }
 
 .session-nav-bar{
-  height: 10%;
+  height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,13 +42,51 @@ figure {
 .session-link{
   color: black;
   background: white;
+  width: 80px;
   border: 1px solid $blue-grey;
   margin: 5px 15px;
   padding: 10px;
   border-radius: 2px;
+  text-align: center;
 }
 .session-link:hover {
   border: 1px solid grey;
   border-radius: 2px;
   background: rgba(240, 240, 240, 1)
+}
+
+
+// grid making
+
+.center-div {
+  display: flex;
+  align-items: center;
+}
+
+.dummy-div {
+  color: transparent;
+}
+
+
+//center section
+
+.nav-text {
+  font-size: 10px;
+  font-weight: lighter;
+  color: navy;
+  margin-right: 20px;
+}
+
+.create-account {
+  color: white;
+  background: #053C75;
+  margin: 5px 15px;
+  padding: 16px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.create-account:hover {
+  background: #032B5F;
 }

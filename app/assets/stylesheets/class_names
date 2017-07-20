@@ -13,7 +13,7 @@ AuthNav:
   - "header-group"
   - "header-message"
   - "nav-bar-logo"
-  -
+  - "login errors"
 
 Session Form:
  - div container: "session-form-container"
