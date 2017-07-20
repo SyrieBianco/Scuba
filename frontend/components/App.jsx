@@ -13,6 +13,7 @@ import {
 import NavbarContainer from "./navbar/navbar_container.js";
 import SessionFormContainer from "./session_form/session_form_container";
 import LandingImage from './landing/landing_image';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
