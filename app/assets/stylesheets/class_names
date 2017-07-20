@@ -1,9 +1,12 @@
 logo figure:
 "logo"
 
-sign in or sign up links:
-  - nav tag
-  - class: "signin-signup"
+
+AuthNav:
+  - "create-account"
+    - "have-account"
+    - "account-button"
+
 
   Nav-bar
   - "header-group"
