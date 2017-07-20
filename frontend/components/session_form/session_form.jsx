@@ -47,12 +47,19 @@ class SessionForm extends React.Component {
 
 
   render() {
+    const demoUser = {user: {username: "JacquesCousteau", password: "psassword"}};
 
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <div className="session-form">
             <h1 className="session-form-header">{this.formHeader()}</h1>
+              <button
+                className="session-form-submit"
+                value={demoUser}
+                type="submit">
+                Demo Log In
+              </button>
               <div className='session-form-inputs'>
                 <input
                   type="text"
