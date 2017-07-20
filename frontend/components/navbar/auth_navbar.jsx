@@ -2,36 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const sessionLinks = () => (
+const landingNav = () => (
   <nav className="nav-bar">
     <ul className="signin-signup">
       <li className="session-link">
         <Link to='/signin'>Log In</Link>
-    </li>
+      </li>
       <li className="session-link">
         <Link to='/signup'>Create Account</Link>
-    </li>
+      </li>
     </ul>
   </nav>
 );
 
-// const sessionFormHeader = () => (
-//   <nav className="signin-login">
-//     <Link to='/siginin'>Sign In</Link> | <Link to='/siginup'>Sign Up</Link>
-//   </nav>
-// );
-
-const personalWelcome = (currentUser, signout) => (
-  <nav className="nav-bar">
-      <hgroup className="header-group">
-    <h2 className="header-message"> Welcome, {currentUser.username}!</h2>
-    <button className="header-button" onClick={ signout }>Sign Out</button>
-      </hgroup>
+const sessionFormNav = () => (
+  <nav className="signin-login">
+    <Link to='/siginin'>Sign In</Link> | <Link to='/siginup'>Sign Up</Link>
   </nav>
 );
 
-const Navbar = ({ currentUser, signout }) => (
-  currentUser ? personalWelcome(currentUser, signout) : sessionLinks()
-);
+// const AuthNavbar = (argument) => {
+//   console.log(argument);
+//   console.log({pageType});
+//   let pageType = argument.pageType;
+//   return ( pageType === "" ? landingNav : sessionFormNav );
+// };
 
-export default Navbar;
+
+
+export default landingNav;
