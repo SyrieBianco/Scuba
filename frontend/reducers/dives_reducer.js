@@ -8,7 +8,7 @@ const DivesReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_DIVES:
-      return action.dive;
+      return action.dives;
     case RECEIVE_DIVE:
       const newDive = {[action.dive.id]: action.dive};
       return merge({}, state, newDive);

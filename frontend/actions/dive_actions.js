@@ -1,4 +1,4 @@
-import * as API from '../util/dive_util';
+import * as API from '../util/dive_api_util';
 
 export const RECEIVE_DIVES = 'RECEIVE_DIVES';
 export const RECEIVE_DIVE = 'RECEIVE_DIVE';
@@ -15,8 +15,8 @@ export const receiveDive = dive => ({
 });
 
 
-export const fetchDives = filters => dispatch => (
-  API.fetchDives(filters).then(dives => (
+export const fetchDives = () => dispatch => (
+  API.fetchDives().then(dives => (
     dispatch(receiveDives(dives))
   ))
 );

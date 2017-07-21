@@ -1,5 +1,5 @@
 
-export const fetchDives = data => (
+export const fetchDives = (data) => (
   $.ajax({
     method: 'GET',
     url: '/api/dives',

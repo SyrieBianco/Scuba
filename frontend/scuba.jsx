@@ -6,9 +6,9 @@ import Root from './components/root';
 
 //test imports
 // import * as SessionAPI from './util/session_api_util';
-// import * as DiveAPI from './util/dive_api_util';
+import * as DiveAPI from './util/dive_api_util';
 // import * as SessionAction from './actions/session_actions';
-import * as DiveAction from './actions/session_actions';
+import * as DiveAction from './actions/dive_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,8 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.createDive = DiveAPI.createDive;
   // window.deleteDive = DiveAPI.deleteDive;
 
-  window.fetchDives = DiveAction.fetchDives;
+  window.receiveDives = DiveAction.receiveDives;
+  window.receiveDive = DiveAction.receiveDive;
   window.fetchDive = DiveAction.fetchDive;
+  window.fetchDives = DiveAction.fetchDives;
   window.createDive = DiveAction.createDive;
   window.deleteDive = DiveAction.deleteDive;
 
