@@ -1,5 +1,5 @@
 
-export const fetchDives = (data, success, error) => (
+export const fetchDives = data => (
   $.ajax({
     method: 'GET',
     url: '/api/dives',
@@ -7,7 +7,7 @@ export const fetchDives = (data, success, error) => (
   })
 );
 
-export const fetchDive = (id, success, error) => (
+export const fetchDive = id => (
   $.ajax({
     method: 'GET',
     url: `/api/dives/${id}`
@@ -22,11 +22,9 @@ export const createDive = dive => (
   })
 );
 
-export const deleteDive = (id, success, error) => (
+export const deleteDive = id => (
   $.ajax({
     method: 'DELETE',
     url: `/api/dives/${id}`,
-    success,
-    error
   })
 );
