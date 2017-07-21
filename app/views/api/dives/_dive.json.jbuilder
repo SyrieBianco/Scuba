@@ -1,0 +1,10 @@
+json.extract! dive,
+  :id,
+  :user_id,
+  :route_id,
+  :elevation_id,
+  :notes,
+  :start_time,
+  :end_time,
+  :start_air_pressure,
+  :end_air_pressure
