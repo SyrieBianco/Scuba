@@ -33,3 +33,9 @@ export const createDive = dive => dispatch => (
     dispatch(receiveDive(dive))
   ))
 );
+
+export const deleteDive = dive => dispatch => (
+  API.deleteDive(dive).then(dive => (
+    dispatch(receiveDive(dive))
+  ))
+);

@@ -22,9 +22,10 @@ export const createDive = dive => (
   })
 );
 
-export const deleteDive = id => (
+export const deleteDive = dive => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/dives/${id}`,
+    url: `/api/dives/${dive.id}`,
+    data: {dive}
   })
 );

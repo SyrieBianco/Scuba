@@ -5,9 +5,11 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 //test imports
-import * as SessionAPI from './util/session_api_util';
-import * as DiveAPI from './util/dive_api_util';
-import * as Action from './actions/session_actions';
+// import * as SessionAPI from './util/session_api_util';
+// import * as DiveAPI from './util/dive_api_util';
+// import * as SessionAction from './actions/session_actions';
+import * as DiveAction from './actions/session_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -28,12 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  // window.signin = Action.signin;
-  // window.signup = Action.signup;
-  // window.signout = Action.signout;
+  // window.signin = SessionAction.signin;
+  // window.signup = SessionAction.signup;
+  // window.signout = SessionAction.signout;
   //
   // window.fetchDives = DiveAPI.fetchDives;
   // window.fetchDive = DiveAPI.fetchDive;
   // window.createDive = DiveAPI.createDive;
   // window.deleteDive = DiveAPI.deleteDive;
+
+  window.fetchDives = DiveAction.fetchDives;
+  window.fetchDive = DiveAction.fetchDive;
+  window.createDive = DiveAction.createDive;
+  window.deleteDive = DiveAction.deleteDive;
+
+
+
 });
