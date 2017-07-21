@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.signin = Action.signin;
-  window.signup = Action.signup;
-  window.signout = Action.signout;
-
-  window.fetchDives = DiveAPI.fetchDives;
-  window.fetchDive = DiveAPI.fetchDive;
-  window.createDive = DiveAPI.createDive;
-  window.deleteDive = DiveAPI.deleteDive;
+  // window.signin = Action.signin;
+  // window.signup = Action.signup;
+  // window.signout = Action.signout;
+  //
+  // window.fetchDives = DiveAPI.fetchDives;
+  // window.fetchDive = DiveAPI.fetchDive;
+  // window.createDive = DiveAPI.createDive;
+  // window.deleteDive = DiveAPI.deleteDive;
 });
