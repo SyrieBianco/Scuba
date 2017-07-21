@@ -2,7 +2,6 @@ import * as API from '../util/dive_util';
 
 export const RECEIVE_DIVES = 'RECEIVE_DIVES';
 export const RECEIVE_DIVE = 'RECEIVE_DIVE';
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 // export const REQUEST_DIVE = 'REQUEST_DIVE';
 
 export const receiveDives = dives => ({
