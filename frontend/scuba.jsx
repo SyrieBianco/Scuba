@@ -5,7 +5,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 //test imports
-import * as API from './util/session_api_util';
+import * as SessionAPI from './util/session_api_util';
+import * as DiveAPI from './util/dive_api_util';
 import * as Action from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,5 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = Action.signup;
   window.signout = Action.signout;
 
-
+  window.fetchDives = DiveAPI.fetchDives;
+  window.fetchDive = DiveAPI.fetchDive;
+  window.createDive = DiveAPI.createDive;
+  window.deleteDive = DiveAPI.deleteDive;
 });
