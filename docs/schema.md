@@ -13,12 +13,13 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
 route_id        | integer   | not null, foreign key (references routes), indexed
+elevation_id    | integer   | not null, foreign key (references routes), indexed
 title           | string    | not null
 notes           | string    | not null
-initialTime     | date      | not null
-endingTime      | date      | not null
-initialAirLevel | integer   |
-endingAirLevel  | integer   |
+start_time      | date      | not null
+end_time        | date      | not null
+start_air_level | integer   |
+end_air_level   | integer   |
 date            | string    | not null
 
 ## Routes
