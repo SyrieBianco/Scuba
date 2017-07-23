@@ -24,3 +24,12 @@ Session Form:
  - inputs: "session-form-input"
  - submit button: "session-form-submit
  "
+
+
+New Dive Form:
+  - "new-dive-errors" -- ul
+  - "new-dive-error" -- li
+  - "new-dive-page" -- section
+  - "new-dive-form" -- form
+  - "new-dive-form-headers" -- label
+  - "new-dive-inputs"

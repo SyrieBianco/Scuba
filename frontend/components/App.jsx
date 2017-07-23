@@ -8,18 +8,22 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import { AuthRoute, ProtectedRoute } from '../util/router_util';
+
 // components
 
 import NavbarContainer from "./navbar/navbar_container.js";
 import AuthNavbarContainer from "./navbar/auth_navbar_container.js";
 import SessionFormContainer from "./session_form/session_form_container";
+import DiveFormContainer from "./dive/dive_form_container";
 import LandingImage from './landing/landing_image';
-import { AuthRoute, ProtectedRoute } from '../util/router_util';
+
 
 const App = () => (
   <div>
     <AuthRoute path="/" component={AuthNavbarContainer} />
     <ProtectedRoute path="/" component={NavbarContainer} />
+    <Route path="/new_dive" component={DiveFormContainer}/>
 
     <Route exact path="/" component={LandingImage} />
 

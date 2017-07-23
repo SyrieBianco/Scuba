@@ -72,8 +72,9 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <div className="session-form">
             <h1 className="session-form-header">{this.formHeader()}</h1>
+              <button type="submit" value="Submit"/>
               <button
-                type="buttons"
+                type="button"
                 className="session-form-submit"
                 onClick={this.handleDemo}>
                 Demo Log In

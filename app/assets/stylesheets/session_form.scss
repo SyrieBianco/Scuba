@@ -4,16 +4,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //nav-bar
 
+$images: (
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678387/coral-reef-underwater-peaceful-light-wonderful-fish-amazing-animals-awesome-cold-blue-ocean-hot-cool-fishes-wild-photography-serenity-diving-pictures-of-tropical-reefs-1920x1080_so2tqe.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678387/cave-diving_jqqlko.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678386/single_diver_v0vacz.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678387/fan_coral_gqr7my.jpg",
+"https://res.cloudinary.com/syriebianco/image/upload/v1500678955/Diver_rock_th8bwc.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678378/Shark_m5t8pt.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678379/diver_soglyr.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678378/bubbles_lpbz7q.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678378/two-silhouttes_p7qfxr.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678378/boat-water-scuba-diver-ocean-sea-underwater-bubbles-wallpaper-1_turz7d.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678378/scuba_diving_tulamben_bali_2000_zydlho.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678378/scuba-diving-course-southern-california_udwse0.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678377/Scuba-divers-782083_2_uhbb3d.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678377/plane_ojetwa.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/a_90/v1500678376/vertical_o3mjlf.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678376/come-respirare-sott-acqua-senza-consumare-ossigeno_p2z9kd.jpg",
+"http://res.cloudinary.com/syriebianco/image/upload/v1500678377/maxresdefault_s2qz69.jpg"
+);
+
+$imgKey: random(length($images));
+
+$img: nth($images, $imgKey);
 
  // - div container:
  .session-form-container {
-   background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500485850/Two_divers_hj335a.jpg");
+   background-image: url($img);
 
    /* Set a specific height */
    height: 100vh;
 
    /* Position and center the image to scale nicely on all screens */
-   background-position: top left;
+   background-position: top center;
    background-repeat: no-repeat;
    background-size: cover;
    position: relative;
