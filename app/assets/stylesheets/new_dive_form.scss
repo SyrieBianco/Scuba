@@ -1,3 +1,9 @@
+.form-header {
+  margin: 0 auto;
+  font-size: 25px;
+
+}
+
 .new-dive-form-box {
   height: 500px;
   width: 80vw;
@@ -16,5 +22,13 @@
 }
 
 .new-dive-inputs{
-  border: 1px grey solid
+  border: 1px grey solid;
+  margin: 0 5px;
+}
+
+
+.input-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

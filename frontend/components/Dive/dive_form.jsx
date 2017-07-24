@@ -48,17 +48,13 @@ class DiveForm extends React.Component {
     const today = now.slice(0,10);
     const time = now.slice(11,19);
 
-    console.log("now",now);
-    console.log("today",today);
-    console.log("time",time);
-
     return (
       <section className="new-dive-page">
         <ul className="new-dive-errors">
           {this.renderErrors()}
         </ul>
         <div className="new-dive-form-container">
-          <h1> Log a New Dive </h1>
+          <h1 className="form-header"> Log a New Dive </h1>
         <form className="new-dive-form-box" onSubmit={this.handleSubmit}>
           <div className="new-dive-form">
 
@@ -72,7 +68,7 @@ class DiveForm extends React.Component {
               />
           </label>
 
-          <div className ="date-time-inputs">
+          <div className ="input-div date-time-inputs">
           <label className="new-dive-form-headers"> Date:
             <input
               className="new-dive-inputs"
@@ -103,7 +99,7 @@ class DiveForm extends React.Component {
           </label>
         </div>
 
-        <div className="air-pressure-inputs">
+        <div className="input-div air-pressure-inputs">
 
           <label className="new-dive-form-headers"> Starting Air Pressure:
             <input
