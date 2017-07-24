@@ -16,7 +16,6 @@ class DiveFeedItem extends React.Component {
       <li className="dive-feed-item">
         <Link to={`/dives/${dive.id}`}>
           <span> { dive.title } </span>
-          <span> { dive.title } </span>
       </Link>
 
       <button onClick={destroyDive} className="delete-button">Delete</button>

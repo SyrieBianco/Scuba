@@ -2,6 +2,7 @@ import * as API from '../util/dive_api_util';
 
 export const RECEIVE_DIVES = 'RECEIVE_DIVES';
 export const RECEIVE_DIVE = 'RECEIVE_DIVE';
+export const REMOVE_DIVE = 'REMOVE_DIVE';
 // export const REQUEST_DIVE = 'REQUEST_DIVE';
 
 export const receiveDives = dives => ({
@@ -11,6 +12,11 @@ export const receiveDives = dives => ({
 
 export const receiveDive = dive => ({
   type: RECEIVE_DIVE,
+  dive
+});
+
+export const removeDive = dive => ({
+  type: REMOVE_DIVE,
   dive
 });
 
@@ -28,13 +34,13 @@ export const fetchDive = id => dispatch => (
 );
 
 export const createDive = dive => dispatch => (
-  API.createDive(dive).then(dive => (
-    dispatch(receiveDive(dive))
+  API.createDive(dive).then(res => (
+    dispatch(receiveDive(res))
   ))
 );
 
 export const deleteDive = dive => dispatch => (
-  API.deleteDive(dive).then(dive => (
-    dispatch(receiveDive(dive))
+  API.deleteDive(dive).then( () => (
+    dispatch(removeDive(dive))
   ))
 );

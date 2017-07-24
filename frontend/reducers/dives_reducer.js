@@ -1,6 +1,9 @@
 import { merge } from 'lodash';
 
-import { RECEIVE_DIVES, RECEIVE_DIVE } from '../actions/dive_actions';
+import {
+  RECEIVE_DIVES,
+  RECEIVE_DIVE,
+  REMOVE_DIVE } from '../actions/dive_actions';
 
 const DivesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -8,10 +11,16 @@ const DivesReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_DIVES:
-      return action.dives;
+      action.dives.forEach(dive => {
+        newState[dive.id] = dive;
+      });
+      return newState;
     case RECEIVE_DIVE:
-      const newDive = {[action.dive.id]: action.dive};
-      return merge({}, state, newDive);
+      newState[action.dive.id] = action.dive;
+      return newState;
+    case REMOVE_DIVE:
+      delete newState[action.dive.id];
+      return newState;
     default:
       return state;
   }

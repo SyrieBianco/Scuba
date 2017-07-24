@@ -29,7 +29,8 @@ class DiveFeed extends React.Component {
           {diveItems}
         </ul>
 
-        <Link to='/new_dive'><button className="session-link">New Dive</button></Link>
+        <Link className="plus-button" to="/new_dive">.</Link>
+        <Link to='/new_dive' className="new-dive">Log a new dive</Link>
       </div>
     );
   }
