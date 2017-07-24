@@ -57,21 +57,38 @@ class DiveForm extends React.Component {
           <h1 className="form-header"> Log a New Dive </h1>
         <form className="new-dive-form-box" onSubmit={this.handleSubmit}>
           <div className="new-dive-form">
+            <div className ="title-inputs">
+              <label className="new-dive-form-headers"> <p>Dive Title:</p>
+                <input
+                  className="title-input"
+                  type="text"
+                  value={this.state.title}
+                  placeholder="e.g. Barracuda Point"
+                  onChange={this.update('title')}
+                />
+              </label>
 
-          <label className="new-dive-form-headers"> Dive Title:
-            <input
-              className="new-dive-inputs"
-              type="text"
-              value={this.state.title}
-              placeholder="e.g. Barracuda Point"
-              onChange={this.update('title')}
-              />
-          </label>
+              <label className="new-dive-form-headers"> <p>Dive Route:</p>
+                <select
+                    className="route-input"
+                    value={this.state.title}
+                    placeholder="e.g. Barracuda Point"
+                    onChange={this.update('title')}
+                  >
+                  <option value="" disabled="true"> -- select a route --  </option>
+                  <option value="Your route 1">Your route 1</option>
+                  <option value="Your route 2">Your route 2</option>
+                  <option value="Your route 3">Your route 3</option>
+                  <option value="Your route 4">Your route 4</option>
+                  <option value="Add a new route">Add a new route</option>
+                </select>
+              </label>
+            </div>
 
-          <div className ="input-div date-time-inputs">
+          <div className ="date-time-inputs">
           <label className="new-dive-form-headers"> Date:
             <input
-              className="new-dive-inputs"
+              className="date-input"
               type="date"
               value={this.state.date || ''}
               placeholder="2006-12-03"
@@ -81,7 +98,7 @@ class DiveForm extends React.Component {
 
           <label className="new-dive-form-headers"> Start Time:
             <input
-              className="new-dive-inputs"
+              className="time-input"
               type="time"
               value={this.state.start_time}
               placeholder={time}
@@ -91,7 +108,7 @@ class DiveForm extends React.Component {
 
           <label className="new-dive-form-headers"> End Time:
             <input
-              className="new-dive-inputs"
+              className="time-input"
               type="time"
               value={this.state.end_time}
               onChange={this.update('end_time')}
@@ -99,11 +116,11 @@ class DiveForm extends React.Component {
           </label>
         </div>
 
-        <div className="input-div air-pressure-inputs">
+        <div className="air-pressure-inputs">
 
           <label className="new-dive-form-headers"> Starting Air Pressure:
             <input
-              className="new-dive-inputs numerical-input"
+              className="pressure-input"
               type="number"
               value={this.state.start_air_pressure}
               onChange={this.update('start_air_pressure')}
@@ -112,7 +129,7 @@ class DiveForm extends React.Component {
 
           <label className="new-dive-form-headers"> Ending Air Pressure:
             <input
-              className="new-dive-inputs numerical-input"
+              className="pressure-input"
               type="number"
               value={this.state.end_air_pressure}
               onChange={this.update('end_air_pressure')}
@@ -124,7 +141,7 @@ class DiveForm extends React.Component {
           <label className="new-dive-form-headers"> Dive Notes:
             <br/>
             <textarea
-              className="new-dive-inputs"
+              className="notes-input"
               cols='40'
               rows='4'
               value={this.state.notes}

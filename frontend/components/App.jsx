@@ -20,9 +20,9 @@ import LandingImage from './landing/landing_image';
 import RoutesIndexContainer from './routes/routes_index_container';
 import NewRouteContainer from './routes/new_route_container';
 
-import NewDiveContainer from './Dive/dive_form_container';
-import DiveFeedContainer from './Dive/dive_feed_container';
-import DiveShowContainer from './Dive/dive_show_container';
+import NewDiveContainer from './dive/dive_form_container';
+import DiveFeedContainer from './dive/dive_feed_container';
+import DiveShowContainer from './dive/dive_show_container';
 
 
 const App = () => (
@@ -36,7 +36,6 @@ const App = () => (
     <Route exact path="/new_route" component={NewRouteContainer} />
 
     <Route exact path="/dives" component={DiveFeedContainer}/>
-    <Route exact path="/new_dive" component={NewDiveContainer}/>
     <Route exact path="/dives/:diveId" component={DiveShowContainer}/>
 
     <AuthRoute path="/signin" component={SessionFormContainer} />
