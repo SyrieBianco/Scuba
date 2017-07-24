@@ -1,4 +1,4 @@
-@import "colors";
+@import "../base/colors";
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -16,7 +16,7 @@ figure {
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $lightest-gray;
 }
 
 
