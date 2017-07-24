@@ -1,21 +1,18 @@
 import { connect } from 'react-redux';
 
-import Actions from '../../actions/session_actions';
-import Component from '';
+import DiveFeed from './dive_feed';
+import { fetchDives } from '../../actions/dive_actions';
+import { allDives } from '../../reducers/selectors';
 
-const mapStateToProps = (state) => {
-  return {
-    //sections of state
-  };
-};
+const mapStateToProps = state => ({
+  dives: allDives(state)
+});
 
-const mapDispatchToProps = (dispatch, state) => {
-  return {
-    //actions
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  fetchDives: () => dispatch(fetchDives())
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Component);
+)(DiveFeed);

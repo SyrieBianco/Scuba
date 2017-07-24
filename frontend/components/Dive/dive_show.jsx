@@ -1,23 +1,23 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 class DiveShow extends React.Component {
-  constructor(props) {
-    super(props);
 
-    // this.state
-    //bindings
+  componentDidMount() {
+    this.props.fetchDive(this.props.diveId);
   }
-
-// instance methods
-
   render() {
-
+    const { dive } = this.props;
     return (
-
-    );
-  }
-
+    <div>
+      <ul className="dive-show">
+        <li>Title: {dive.title}</li>
+        <li>This is the dive show page</li>
+      </ul>
+    </div>
+  );
+}
 }
 
-export default withRouter(DiveShow);
+export default DiveShow;

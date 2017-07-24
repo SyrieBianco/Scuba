@@ -1,37 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
-const sessionLinks = () => (
-  <nav className="nav-bar">
-    <ul className="signin-signup">
-      <li className="session-link">
-        <Link to='/signin'>Log In</Link>
-    </li>
-      <li className="session-link">
-        <Link to='/signup'>Create Account</Link>
-    </li>
-    </ul>
-  </nav>
-);
+class NavBar extends React.Component {
 
-// const sessionFormHeader = () => (
-//   <nav className="signin-login">
-//     <Link to='/siginin'>Sign In</Link> | <Link to='/siginup'>Sign Up</Link>
-//   </nav>
-// );
 
-const personalWelcome = (currentUser, signout) => (
-  <nav className="nav-bar">
-      <hgroup className="header-group">
-    <h2 className="header-message"> Welcome, {currentUser.username}!</h2>
-    <button className="header-button" onClick={ signout }>Sign Out</button>
-      </hgroup>
-  </nav>
-);
+  render() {
+    const signout = this.props.signout;
+    return(
+      <nav className="nav-bar">
+        <div className="left-nav">
+          <img className="nav-bar-logo"
+            src="http://res.cloudinary.com/syriebianco/image/upload/v1500904176/scuba_blue_tight_rvx8r2.png"
+            alt="logo"/>
+          <div className="nav-links">
+            <NavLink
+              className="nav-link"
+              to="/dives">Dive Log</NavLink>
+            <NavLink
+              className="nav-link"
+              to="/routes">Dive Routes</NavLink>
+            <NavLink
+              className="nav-link"
+              to="/dashboard">Dashboard</NavLink>
+          </div>
+        </div>
+        <div className="right-nav">
+        <button className="nav-logout" onClick={signout}>Logout</button>
+        </div>
+      </nav>
+    );
+  }
+}
 
-const Navbar = ({ currentUser, signout }) => (
-  currentUser ? personalWelcome(currentUser, signout) : sessionLinks()
-);
-
-export default Navbar;
+export default NavBar;

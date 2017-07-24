@@ -30,6 +30,9 @@ New Dive Form:
   - "new-dive-errors" -- ul
   - "new-dive-error" -- li
   - "new-dive-page" -- section
-  - "new-dive-form" -- form
+  - "new-dive-form-box" -- form
+  - "new-dive-form" -- div
   - "new-dive-form-headers" -- label
   - "new-dive-inputs"
+  - "date-time-inputs"
+  - "air-pressure-inputs"

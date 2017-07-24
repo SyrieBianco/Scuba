@@ -24,7 +24,7 @@ const sessionFormNav = (pageType) => {
   <nav className="session-nav-bar">
     <div className="dummy-div">.</div>
     <img className="nav-bar-logo"
-      src="http://res.cloudinary.com/syriebianco/image/upload/v1500485614/logo_v3_black_df4fiv.png"
+      src="http://res.cloudinary.com/syriebianco/image/upload/v1500904176/scuba_blue_tight_rvx8r2.png"
       alt="logo"/>
     <Link
       className="session-link"
@@ -42,8 +42,8 @@ const sessionFormNav = (pageType) => {
 // };
 
 
-const Navbar = ({ pageType }) => (
+const AuthNavbar = ({ pageType }) => (
 (pageType === 'signin' || pageType === 'signup') ? sessionFormNav(pageType) : landingNav()
 );
 
-export default Navbar;
+export default AuthNavbar;

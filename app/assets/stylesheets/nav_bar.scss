@@ -8,29 +8,73 @@ figure {
   display: inline;
 }
 
+// general nav
+
 .nav-bar {
-  height: 70px;
+  height: 55px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 0px 50px;
   border-bottom: 2px solid black;
 }
 
+
+.nav-bar-logo {
+  height: 60px;
+  width: auto;
+  display: inline;
+  // position: absolute;
+}
+
+// internal nav
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-link {
+  padding: 19px;
+}
+
+.nav-link:hover{
+  font-weight: 400;
+  // font-weight: bold;
+  padding: 17px;
+  color: #0070C0;
+  border-bottom: 3px solid #0070C0;
+}
+
+.nav-links:hover {
+  // transform: translate(-2px, 2px);
+}
+
+.active {
+  font-weight: 400;
+  padding: 17px;
+  border-bottom: 3px solid #0070C0;
+}
+
+// new session nav
+
 .session-nav-bar{
-  height: 70px;
+  height: 55px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px 50px;
   border-bottom: 2px solid black;
-}
-.nav-bar-logo {
-  height: 60px;
-  width: auto;
-  margin-top: 12px;
-  display: inline;
-  // position: absolute;
 }
 
 .signin-signup{
@@ -85,6 +129,7 @@ figure {
   border-radius: 4px;
   text-align: center;
   font-size: 18px;
+  transition: .6s;
 
 }
 

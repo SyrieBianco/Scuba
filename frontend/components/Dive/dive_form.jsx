@@ -25,7 +25,11 @@ class DiveForm extends React.Component {
   }
 
   update(property) {
-    return e => this.setState({ [property]: e.target.value});
+    const that = this;
+    return e => {
+      console.log(e.target.value);
+      return that.setState({ [property]: e.target.value});
+    };
   }
 
   renderErrors() {
@@ -40,84 +44,107 @@ class DiveForm extends React.Component {
 
 
   render() {
+    const now = new Date().toISOString();
+    const today = now.slice(0,10);
+    const time = now.slice(11,19);
+
+    console.log("now",now);
+    console.log("today",today);
+    console.log("time",time);
 
     return (
       <section className="new-dive-page">
         <ul className="new-dive-errors">
           {this.renderErrors()}
         </ul>
-        <form className="new-dive-form" onSubmit={this.handleSubmit}>
-          <label className="new-dive-form-headers"> Dive Title
+        <div className="new-dive-form-container">
+          <h1> Log a New Dive </h1>
+        <form className="new-dive-form-box" onSubmit={this.handleSubmit}>
+          <div className="new-dive-form">
+
+          <label className="new-dive-form-headers"> Dive Title:
             <input
               className="new-dive-inputs"
               type="text"
               value={this.state.title}
-              placeholder="e.g. Barracuda Point Dive"
+              placeholder="e.g. Barracuda Point"
               onChange={this.update('title')}
               />
           </label>
 
-          <label className="new-dive-form-headers"> Date
+          <div className ="date-time-inputs">
+          <label className="new-dive-form-headers"> Date:
             <input
               className="new-dive-inputs"
               type="date"
-              value={this.state.date}
-              placeholder="e.g. Barracuda Point Dive"
+              value={this.state.date || ''}
+              placeholder="2006-12-03"
               onChange={this.update('date')}
               />
           </label>
 
-          <label className="new-dive-form-headers"> Start Time
+          <label className="new-dive-form-headers"> Start Time:
             <input
               className="new-dive-inputs"
               type="time"
               value={this.state.start_time}
-              placeholder="e.g. Barracuda Point Dive"
+              placeholder={time}
               onChange={this.update('start_time')}
               />
           </label>
 
-          <label className="new-dive-form-headers"> End Time
+          <label className="new-dive-form-headers"> End Time:
             <input
               className="new-dive-inputs"
               type="time"
               value={this.state.end_time}
-              placeholder="e.g. Barracuda Point Dive"
               onChange={this.update('end_time')}
               />
           </label>
+        </div>
 
-          <label className="new-dive-form-headers"> Starting Air Pressure
+        <div className="air-pressure-inputs">
+
+          <label className="new-dive-form-headers"> Starting Air Pressure:
             <input
-              className="new-dive-inputs"
+              className="new-dive-inputs numerical-input"
               type="number"
               value={this.state.start_air_pressure}
-              placeholder="e.g. Barracuda Point Dive"
               onChange={this.update('start_air_pressure')}
               /> psi
           </label>
 
-          <label className="new-dive-form-headers"> Ending Air Pressure
+          <label className="new-dive-form-headers"> Ending Air Pressure:
             <input
-              className="new-dive-inputs"
+              className="new-dive-inputs numerical-input"
               type="number"
               value={this.state.end_air_pressure}
-              placeholder="e.g. Barracuda Point Dive"
               onChange={this.update('end_air_pressure')}
               /> psi
           </label>
 
+        </div>
+
           <label className="new-dive-form-headers"> Dive Notes:
+            <br/>
             <textarea
               className="new-dive-inputs"
-              cols='20'
+              cols='40'
               rows='4'
               value={this.state.notes}
               placeholder="Spotted two eagle rays, kept breathing rate steady"
               onChange={this.update('notes')}
               ></textarea>
           </label>
+
+          <input
+            className="new-dive-submit"
+            type="submit"
+            value="Submit">
+          </input>
+        </div>
         </form>
+      </div>
       </section>
     );
   }
