@@ -11,7 +11,7 @@ figure {
 // general nav
 
 .nav-bar {
-  height: 55px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,24 +46,28 @@ figure {
 
 .nav-link {
   padding: 19px;
+  width: 130px;
+  text-align: center;
 }
 
 .nav-link:hover{
   font-weight: 400;
   // font-weight: bold;
-  padding: 16px;
+  padding: 17px;
   color: #0070C0;
   border-bottom: 3px solid #0070C0;
+  transform: translate(0px, 1px);
+
 }
 
 .nav-links:hover {
-  // transform: translate(-2px, 2px);
 }
 
 .active {
   font-weight: 400;
   padding: 17px;
   border-bottom: 3px solid #0070C0;
+  transform: translate(0px, 1px);
 }
 
 // new session nav
@@ -115,7 +119,7 @@ figure {
 //center section
 
 .nav-text {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: lighter;
   color: navy;
   margin-right: 20px;
@@ -123,17 +127,17 @@ figure {
 
 .create-account {
   color: white;
-  background: #053C75;
+  background: $blue;
   margin: 5px 15px;
-  padding: 16px;
-  border-radius: 4px;
+  padding: 15px 16px;
+  border-radius: 3px;
   text-align: center;
   font-size: 18px;
-  transition: .6s;
+  transition: .3s;
 
 }
 
 .create-account:hover {
-  background: #032B5F;
-  transform: translate(1px, 1px);
+  background: $darker-blue;
+  transform: translate(0px, 1px);
 }
