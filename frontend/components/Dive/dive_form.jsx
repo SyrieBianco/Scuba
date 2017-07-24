@@ -6,7 +6,7 @@ class DiveForm extends React.Component {
     super(props);
     this.state = {
       user_id: null,
-      route_id: null,
+      route: null,
       title: '',
       notes: '',
       date: null,
@@ -54,8 +54,8 @@ class DiveForm extends React.Component {
           {this.renderErrors()}
         </ul>
         <div className="new-dive-form-container">
-          <h1 className="form-header"> Log a New Dive </h1>
         <form className="new-dive-form-box" onSubmit={this.handleSubmit}>
+          <h1 className="form-header"> Log a New Dive </h1>
           <div className="new-dive-form">
             <div className ="title-inputs">
               <label className="new-dive-form-headers"> <p>Dive Title:</p>
@@ -71,9 +71,9 @@ class DiveForm extends React.Component {
               <label className="new-dive-form-headers"> <p>Dive Route:</p>
                 <select
                     className="route-input"
-                    value={this.state.title}
+                    value={this.state.route || ""}
                     placeholder="e.g. Barracuda Point"
-                    onChange={this.update('title')}
+                    onChange={this.update('route')}
                   >
                   <option value="" disabled="true"> -- select a route --  </option>
                   <option value="Your route 1">Your route 1</option>
@@ -138,7 +138,8 @@ class DiveForm extends React.Component {
 
         </div>
 
-          <label className="new-dive-form-headers"> Dive Notes:
+        <div>
+          <label className="new-dive-form-headers"> <p>Dive Notes:</p>
             <br/>
             <textarea
               className="notes-input"
@@ -149,7 +150,7 @@ class DiveForm extends React.Component {
               onChange={this.update('notes')}
               ></textarea>
           </label>
-
+      </div>
           <input
             className="new-dive-submit"
             type="submit"

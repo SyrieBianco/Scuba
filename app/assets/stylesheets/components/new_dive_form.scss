@@ -3,36 +3,43 @@
 // form header
 
 .form-header {
-  margin: 0 auto;
+  margin-top: 45px;
+  margin-left: 23px;
   font-size: 25px;
-
 }
 
 
 // grid making
+.new-dive-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 .new-dive-form-box {
-  height: 500px;
+  height: auto;
   width: 80vw;
   display: flex;
-  margin: 70px auto;
+  flex-direction: column;
+  margin: 0px 80px;
 }
 .new-dive-form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 20px;
-
-  .title-inputs {
-    justify-content: flex-start;
-  }
+  width: 800px;
 
   div {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 30px;
     border-bottom: 1px solid $light-gray;
+  }
+
+  div:last-of-type {
+    border: none;
   }
 }
 
@@ -69,8 +76,9 @@
 
   }
 
-  .new-dive-submit {
 
+  .new-dive-submit:hover {
+    background: $darker-blue
   }
 
   input {
@@ -82,7 +90,14 @@
   select {
     border: 1px grey solid;
     margin: 0 15px;
-    padding: 3px;
+    padding: 9px;
+    border-radius: 1px;
+    -webkit-appearance: none;
+  }
+
+  textarea {
+    border: 1px grey solid;
+    margin: 0 30px;
   }
 }
 
@@ -92,4 +107,13 @@
   flex-direction: row;
   justify-content: space-around;
   border-bottom: 1px
+}
+
+.new-dive-submit {
+  background: $blue;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px;
+  width: 100px;
 }
