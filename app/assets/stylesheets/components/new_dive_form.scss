@@ -63,7 +63,7 @@
   }
 
   .time-input {
-    width: 80px;
+    width: 135px;
   }
 
   .pressure-input {
@@ -77,9 +77,6 @@
   }
 
 
-  .new-dive-submit:hover {
-    background: $darker-blue
-  }
 
   input {
     border: 1px grey solid;
@@ -116,4 +113,9 @@
   text-align: center;
   padding: 10px;
   width: 100px;
+  transition: .4s;
+}
+
+.new-dive-submit:hover {
+  background: $darker-blue
 }

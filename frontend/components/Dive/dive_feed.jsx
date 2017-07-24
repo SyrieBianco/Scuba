@@ -15,7 +15,7 @@ class DiveFeed extends React.Component {
 
   render() {
     const {dives} = this.props;
-    if (!dives) {return null};
+    if (!dives) {return null}
     const diveItems = this.props.dives.map(dive => (
         <DiveFeedItemContainer
           key={ dive.id }
@@ -24,12 +24,12 @@ class DiveFeed extends React.Component {
     );
     return (
       <div className="dives-feed">
-        <h1>hi hope!</h1>
+        <h1>Your Logged Dives</h1>
         <ul className="dive-list">
           {diveItems}
         </ul>
 
-        <Link to='/new_dive'><button className="new-dive-btn">New Dive</button></Link>
+        <Link to='/new_dive'><button className="session-link">New Dive</button></Link>
       </div>
     );
   }

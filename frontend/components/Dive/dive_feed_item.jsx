@@ -9,11 +9,13 @@ class DiveFeedItem extends React.Component {
 
   render() {
     const { dive, destroyDive } = this.props;
+    console.log(dive);
 
     return (
 
       <li className="dive-feed-item">
         <Link to={`/dives/${dive.id}`}>
+          <span> { dive.title } </span>
           <span> { dive.title } </span>
       </Link>
 

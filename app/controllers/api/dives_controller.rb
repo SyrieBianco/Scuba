@@ -1,8 +1,17 @@
+require 'time'
+
 class Api::DivesController < ApplicationController
   before_action :require_logged_in
 
   def create
-    @dive = Dive.new(dive_params)
+    updated_params = dive_params.except(:date)
+
+    updated_params[:start_time] = Time.parse(dive_params[:date] + ' ' + dive_params[:start_time])
+    updated_params[:end_time] = Time.parse(dive_params[:date] + ' ' + dive_params[:end_time])
+
+
+    @dive = Dive.new(updated_params)
+
     @dive.user_id = current_user.id
 
     if @dive.save
@@ -47,5 +56,5 @@ class Api::DivesController < ApplicationController
       :end_air_pressure
     )
   end
-  
+
 end

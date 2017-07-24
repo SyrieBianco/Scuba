@@ -5,8 +5,7 @@ class DiveForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id: null,
-      route: null,
+      route_id: 1,
       title: '',
       notes: '',
       date: null,
@@ -27,7 +26,6 @@ class DiveForm extends React.Component {
   update(property) {
     const that = this;
     return e => {
-      console.log(e.target.value);
       return that.setState({ [property]: e.target.value});
     };
   }
