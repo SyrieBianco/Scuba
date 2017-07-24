@@ -16,7 +16,8 @@ figure {
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px;
-  border-bottom: 1px solid $lightest-gray;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08)
 }
 
 
@@ -114,6 +115,7 @@ figure {
   align-items: center;
   padding: 10px 50px;
   border-bottom: 2px solid black;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08)
 }
 
 .signin-signup{
