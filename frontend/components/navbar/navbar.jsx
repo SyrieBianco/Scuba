@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 class NavBar extends React.Component {
 
-
   render() {
+    const user = this.props.currentUser;
     const signout = this.props.signout;
     return(
       <nav className="nav-bar">
@@ -26,7 +26,9 @@ class NavBar extends React.Component {
           </div>
         </div>
         <div className="right-nav">
-        <button className="nav-logout" onClick={signout}>Logout</button>
+          <p className="welcome-text">{'Welcome, ' + user.username }</p>
+          <Link className="plus-button" to="/new_dive"></Link>
+          <button className="logout-button" onClick={signout}>Log Out</button>
         </div>
       </nav>
     );

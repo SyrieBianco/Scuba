@@ -70,6 +70,41 @@ figure {
   transform: translate(0px, 1px);
 }
 
+.welcome-text {
+  margin: 0 20px;
+}
+
+.plus-button {
+  width: 30px;
+  height: 30px;
+  background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/add_1_xoiuzu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.plus-button:hover {
+  background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/square-add-button_sf46rz.png");
+}
+
+.logout-button {
+  margin: 0 8px;
+  padding: 8px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 75px;
+  text-align: center;
+  transition: .6s
+}
+
+.logout-button:hover {
+  font-weight: 400;
+  color: #0070C0;
+  border-radius: 2px;
+
+}
+
 // new session nav
 
 .session-nav-bar{
