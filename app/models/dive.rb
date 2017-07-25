@@ -4,6 +4,8 @@ class Dive < ApplicationRecord
 
   belongs_to :user
 
+  helper_method :duration, :air_consumed
+
 # belongs_to :route
 # has_many :elevations
 
@@ -23,6 +25,10 @@ class Dive < ApplicationRecord
     sec_string = "0" + sec_string if seconds < 10
 
     "#{hr_string}:#{min_string}:#{sec_string}"
+  end
+
+  def air_consumed
+    end_air_pressure - start_air_pressure
   end
 
   private
