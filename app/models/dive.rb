@@ -9,7 +9,7 @@ class Dive < ApplicationRecord
 # belongs_to :route
 # has_many :elevations
 
-  def duration
+  def end_time=(end_time)
     difference = self.end_time - self.start_time
 
     minutes = difference / 60
@@ -24,11 +24,11 @@ class Dive < ApplicationRecord
     min_string = "0" + min_string if minutes < 10
     sec_string = "0" + sec_string if seconds < 10
 
-    "#{hr_string}:#{min_string}:#{sec_string}"
+    self.duration = "#{hr_string}:#{min_string}:#{sec_string}"
   end
 
-  def air_consumed
-    end_air_pressure - start_air_pressure
+  def end_air_pressure=(end_air_pressure)
+    self.air_consumed = end_air_pressure - start_air_pressure
   end
 
   private
