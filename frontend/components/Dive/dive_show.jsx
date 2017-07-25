@@ -11,10 +11,17 @@ class DiveShow extends React.Component {
     const { dive } = this.props;
     return (
     <div>
-      <ul className="dive-show">
-        <li>Title: {dive.title}</li>
-        <li>This is the dive show page</li>
-      </ul>
+      <div className="dive-show">
+        <h1 className="form-header">{dive.title}</h1>
+        <figure className="sample-route-fig">
+            <img className="sample-route-img"
+              src="http://res.cloudinary.com/syriebianco/image/upload/v1500995415/Screen_Shot_2017-07-25_at_8.09.47_AM_offhdm.png"
+              alt="dive route map"/>
+        </figure>
+        <div className="dive-info">
+          
+        </div>
+      </div>
     </div>
   );
 }
