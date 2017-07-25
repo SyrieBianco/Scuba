@@ -9,7 +9,7 @@ class DiveFeedItem extends React.Component {
 
   render() {
     const { dive, destroyDive } = this.props;
-    
+
     return (
 
       <li className="dive-feed-item">

@@ -17,6 +17,7 @@
 .dive-feed-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   padding: 10px;
   border-top: 1px solid $light-gray;
@@ -33,12 +34,26 @@
 
   a {
     font-size: 20px;
-    margin: 5px;
+    margin: 0 5px;
   }
 
   a:first-of-type {
-    margin-left: 35px
+    margin-left: 45px
   }
+}
+
+// buttons
+
+.delete-button {
+  // background: rgba(240, 240, 240, .75);
+  background: transparentize($light-gray, .6);
+  border-radius: 2px;
+  padding: 7px 10px;
+}
+
+.delete-button:hover {
+  // background: rgba(230, 230, 230, 1);
+  background: $light-gray;
 }
 
 .feed-plus-button {
