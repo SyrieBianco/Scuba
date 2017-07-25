@@ -1,6 +1,7 @@
 class Dive < ApplicationRecord
   validates :user, :start_time, :end_time, :duration, :air_consumed, presence: true
   validate :no_future_dives
+  validate :valid_start_and_end_pressure
 
   belongs_to :user
 
@@ -32,7 +33,6 @@ class Dive < ApplicationRecord
     self.air_consumed = end_air_pressure - start_air_pressure
   end
 
-
   def valid_start_and_end_time
     if start_time > end_time
       errors.add(:start_time, "The start time must be before the end time")
@@ -46,5 +46,10 @@ class Dive < ApplicationRecord
     end
   end
 
+  def valid_start_and_end_pressure
+    if start_air_pressure > end_air_pressure
+      errors.add(:start_air_pressure, "The starting air pressure must be greater than the final reading")
+    end
+  end
 
 end
