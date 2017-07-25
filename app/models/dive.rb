@@ -27,8 +27,18 @@ class Dive < ApplicationRecord
 
   private
 
-  def no_future_dives
-
+  def valid_start_and_end_time
+    if start_time > end_time
+      errors.add(:start_time, "The start time must be before the end time")
+    end
   end
+
+  def no_future_dives
+    if start_time > Time.now || end_time > Time.now
+      errors.add(:start_time,
+                 "Dives cannot be logged that start or end in the future")
+    end
+  end
+
 
 end
