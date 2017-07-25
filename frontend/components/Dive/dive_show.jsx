@@ -10,7 +10,7 @@ class DiveShow extends React.Component {
   render() {
     const { dive } = this.props;
     const date = new Date(dive.start_time);
-    const time = date.toLocaleTimeString('en-US')
+    const time = date.toLocaleTimeString('en-US');
 
     return (
     <div>
@@ -23,7 +23,7 @@ class DiveShow extends React.Component {
           <div className="dive-info">
 
             <div className="date-time-div">
-              <h3>Locaton:<p></p></h3>
+              <h3>Location:<p></p></h3>
               <h3>Dive Date:
                 <p>{date.toDateString()}</p></h3>
               <h3>Time: <p>{time}</p></h3>
@@ -39,7 +39,6 @@ class DiveShow extends React.Component {
               <h3>Notes:</h3>
               <h3 className="dive-notes"><p>{dive.notes}</p></h3>
             </div>
-
           </div>
 
           <figure className="route-fig">

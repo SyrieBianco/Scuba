@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# user
+
+demo = User.create!(
+  username: JacquesCousteau,
+  password: password
+)
+
+# dives
+
+Dive.delete_all
+
+Dive.create!(
+  title: ,
+  user_id:
+)

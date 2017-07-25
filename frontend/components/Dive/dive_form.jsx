@@ -26,6 +26,7 @@ class DiveForm extends React.Component {
   update(property) {
     const that = this;
     return e => {
+      console.log(that.state);
       return that.setState({ [property]: e.target.value});
     };
   }

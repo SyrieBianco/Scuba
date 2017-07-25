@@ -39,14 +39,14 @@ class Dive < ApplicationRecord
   end
 
   def no_future_dives
-    if start_time > Time.now || end_time > Time.now
+    if start_time > Time.now.to_i || end_time > Time.now.to_i
       errors.add(:start_time,
                  "Dives cannot be logged that start or end in the future")
     end
   end
 
   def valid_start_and_end_pressure
-    if start_air_pressure > end_air_pressure
+    if start_air_pressure < end_air_pressure
       errors.add(:start_air_pressure, "The starting air pressure must be greater than the final reading")
     end
   end

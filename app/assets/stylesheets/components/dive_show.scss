@@ -6,6 +6,7 @@
 
 .dive-route-and-info {
 border-top: 1px solid $light-gray;
+border-bottom: 1px solid $light-gray;
 width: 800px;
 display: flex;
 justify-content: space-between;
@@ -14,15 +15,18 @@ padding: 20px;
 }
 
 .dive-info {
+  width: 40%;
+
   div {
     border-bottom: 1px solid $light-gray;
     padding: 10px;
 
     h3 {
       padding: 5px;
-      font-weight: normal;
+      // font-weight: normal;
       display: flex;
       justify-content: space-between;
+      color: $darker-blue;
 
       p, h4 {
         font-weight: lighter;
@@ -30,7 +34,9 @@ padding: 20px;
     }
 
     h3.dive-notes {
-      padding: 8px;
+      padding: 10px;
+      font-size: 14px;
+      color: black
     }
   }
 
@@ -42,7 +48,9 @@ padding: 20px;
 }
 
 .sample-route-img {
-
+  border: 1px solid gray;
+  border-radius: 1px;
+  display: block;
 }
 
 .route-fig {

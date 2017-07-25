@@ -13,7 +13,6 @@ import { AuthRoute, ProtectedRoute } from '../util/router_util';
 // components
 
 import NavbarContainer from "./navbar/navbar_container.js";
-import AuthNavbarContainer from "./navbar/auth_navbar_container.js";
 import SessionFormContainer from "./session_form/session_form_container";
 import DiveFormContainer from "./dive/dive_form_container";
 import LandingImage from './landing/landing_image';
@@ -25,23 +24,27 @@ import DiveFeedContainer from './dive/dive_feed_container';
 import DiveShowContainer from './dive/dive_show_container';
 
 
-const App = () => (
+const App = () => {
+
+  return (
   <div>
-    <AuthRoute path="/" component={AuthNavbarContainer} />
-    <ProtectedRoute path="/" component={NavbarContainer} />
+    <Route path="/" component={NavbarContainer} />
     <Route path="/new_dive" component={DiveFormContainer}/>
 
     <Route exact path="/" component={LandingImage} />
-    <Route exact path="/routes" component={RoutesIndexContainer} />
-    <Route exact path="/new_route" component={NewRouteContainer} />
+    <Switch>
+      <ProtectedRoute exact path="/routes" component={RoutesIndexContainer} />
+      <ProtectedRoute exact path="/new_route" component={NewRouteContainer} />
 
-    <Route exact path="/dives" component={DiveFeedContainer}/>
-    <Route exact path="/dives/:diveId" component={DiveShowContainer}/>
+      <ProtectedRoute exact path="/dives" component={DiveFeedContainer}/>
+      <ProtectedRoute exact path="/dives/:diveId" component={DiveShowContainer}/>
 
-    <AuthRoute path="/signin" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/signin" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+    </Switch>
   </div>
-);
+  );
+};
 
 export default App;
 
