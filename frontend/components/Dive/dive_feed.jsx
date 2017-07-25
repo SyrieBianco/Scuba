@@ -24,13 +24,14 @@ class DiveFeed extends React.Component {
     );
     return (
       <div className="dives-feed">
-        <h1>Your Logged Dives</h1>
+        <h1 className="form-header">Your Logged Dives</h1>
         <ul className="dive-list">
           {diveItems}
         </ul>
-
-        <Link className="plus-button" to="/new_dive">.</Link>
-        <Link to='/new_dive' className="new-dive">Log a new dive</Link>
+        <div className="new-dive-links">
+          <Link className="feed-plus-button" to="/new_dive"></Link>
+          <Link to='/new_dive' className="new-dive">Log a new dive</Link>
+        </div>
       </div>
     );
   }

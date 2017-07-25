@@ -1,0 +1,56 @@
+@import "../base/colors";
+
+
+.dives-feed {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 600px;
+
+}
+
+.dive-list {
+    list-style: none;
+    padding: 40px;
+}
+
+.dive-feed-item {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px;
+  border-top: 1px solid $light-gray;
+}
+
+.dive-feed-item:last-of-type {
+  border-bottom: 1px solid $light-gray
+}
+
+.new-dive-links{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  a {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  a:first-of-type {
+    margin-left: 35px
+  }
+}
+
+.feed-plus-button {
+  width: 20px;
+  height: 20px;
+  background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/add_1_xoiuzu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.feed-plus-button:hover {
+  background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/square-add-button_sf46rz.png");
+}
