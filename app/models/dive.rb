@@ -1,15 +1,16 @@
 class Dive < ApplicationRecord
-  validates :user, :start_time, :end_time, presence: true
+  validates :user, :start_time, :end_time, :duration, :air_consumed, presence: true
   validate :no_future_dives
 
   belongs_to :user
 
-  helper_method :duration, :air_consumed
-
+  after_initialize :ensure_duration, :ensure_air_consumed
 # belongs_to :route
 # has_many :elevations
 
-  def end_time=(end_time)
+  private
+
+  def ensure_duration
     difference = self.end_time - self.start_time
 
     minutes = difference / 60
@@ -27,11 +28,10 @@ class Dive < ApplicationRecord
     self.duration = "#{hr_string}:#{min_string}:#{sec_string}"
   end
 
-  def end_air_pressure=(end_air_pressure)
+  def ensure_air_consumed
     self.air_consumed = end_air_pressure - start_air_pressure
   end
 
-  private
 
   def valid_start_and_end_time
     if start_time > end_time
