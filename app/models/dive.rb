@@ -9,8 +9,8 @@ class Dive < ApplicationRecord
 # belongs_to :route
 # has_many :elevations
 
+  def calculate_duration
 
-  def ensure_duration
     difference = self.end_time - self.start_time
 
     minutes = difference / 60
@@ -25,7 +25,11 @@ class Dive < ApplicationRecord
     min_string = "0" + min_string if minutes < 10
     sec_string = "0" + sec_string if seconds < 10
 
-    self.duration = "#{hr_string}:#{min_string}:#{sec_string}"
+    hours === 0 ? "#{min_string} mins" : "#{hr_string}hrs #{min_string}mins"
+  end
+
+  def ensure_duration
+    self.duration = calculate_duration
   end
 
   def ensure_air_consumed
