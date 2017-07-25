@@ -21,11 +21,18 @@ class Dive < ApplicationRecord
 
     hr_string, min_string, sec_string = hours.to_s, minutes.to_s, seconds.to_s
 
-    hr_string = "0" + hr_string if hours < 10
+    # hr_string = "0" + hr_string if hours < 10
     min_string = "0" + min_string if minutes < 10
     sec_string = "0" + sec_string if seconds < 10
 
-    hours === 0 ? "#{min_string} mins" : "#{hr_string}hrs #{min_string}mins"
+    if hours === 0
+      "#{min_string} mins"
+    elsif hours === 1
+      "#{hr_string}hr #{min_string}mins"
+    else
+      "#{hr_string}hrs #{min_string}mins"
+    end
+    
   end
 
   def ensure_duration

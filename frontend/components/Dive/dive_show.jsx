@@ -9,7 +9,7 @@ class DiveShow extends React.Component {
   }
   render() {
     const { dive } = this.props;
-    const date = new Date(dive.start_time);
+    const date = new Date(dive.start_time * 1000);
     const time = date.toLocaleTimeString('en-US');
 
     return (

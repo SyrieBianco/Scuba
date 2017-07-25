@@ -29,10 +29,10 @@ const App = () => {
   return (
   <div>
     <Route path="/" component={NavbarContainer} />
-    <Route path="/new_dive" component={DiveFormContainer}/>
 
     <Route exact path="/" component={LandingImage} />
     <Switch>
+      <ProtectedRoute exact path="/new_dive" component={DiveFormContainer}/>
       <ProtectedRoute exact path="/routes" component={RoutesIndexContainer} />
       <ProtectedRoute exact path="/new_route" component={NewRouteContainer} />
 
