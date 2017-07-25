@@ -1,0 +1,46 @@
+@import "../base/colors";
+
+.dive-show {
+  margin-left: 50px
+}
+
+.dive-route-and-info {
+border-top: 1px solid $light-gray;
+width: 800px;
+display: flex;
+justify-content: space-between;
+margin: 40px;
+padding: 20px;
+}
+
+.dive-info {
+  div {
+    border-bottom: 1px solid $light-gray;
+    padding: 10px;
+  }
+
+  div:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.sample-route-img {
+
+}
+
+.route-fig {
+
+}
+
+.date-time-div{
+
+}
+
+.stats-div {
+
+}
+
+.notes-div {
+  display: flex;
+  flex-direction: column;
+}

@@ -4,6 +4,7 @@ json.extract! dive,
   :user_id,
   :route_id,
   :elevation_id,
+  :start_time,
   :notes,
   :duration,
   :air_consumed

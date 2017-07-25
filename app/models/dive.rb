@@ -9,7 +9,6 @@ class Dive < ApplicationRecord
 # belongs_to :route
 # has_many :elevations
 
-  private
 
   def ensure_duration
     difference = self.end_time - self.start_time
@@ -30,7 +29,7 @@ class Dive < ApplicationRecord
   end
 
   def ensure_air_consumed
-    self.air_consumed = end_air_pressure - start_air_pressure
+    self.air_consumed = start_air_pressure - end_air_pressure
   end
 
   def valid_start_and_end_time
