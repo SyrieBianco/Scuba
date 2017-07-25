@@ -17,8 +17,3 @@ demo = User.create!(
 # dives
 
 Dive.delete_all
-
-Dive.create!(
-  title: ,
-  user_id:
-)
