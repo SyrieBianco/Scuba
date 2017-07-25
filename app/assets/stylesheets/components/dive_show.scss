@@ -17,7 +17,24 @@ padding: 20px;
   div {
     border-bottom: 1px solid $light-gray;
     padding: 10px;
+
+    h3 {
+      padding: 5px;
+      font-weight: normal;
+      display: flex;
+      justify-content: space-between;
+
+      p, h4 {
+        font-weight: lighter;
+      }
+    }
+
+    h3.dive-notes {
+      padding: 8px;
+    }
   }
+
+
 
   div:last-of-type {
     border-bottom: none;
