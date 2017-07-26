@@ -1,20 +1,14 @@
 import { connect } from 'react-redux';
 
-import { createRoute } from '../../actions/route_actions';
+import RouteIndexItem from './index_item';
+import { deleteRoute } from '../../actions/route_actions';
 
-import Map from './map';
 
-
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser,
-  errors: state.errors
-});
-
-const mapDispatchToProps = dispatch => ({
-  createRoute: route => dispatch(createRoute(route))
+const mapDispatchToProps = (dispatch, {route}) => ({
+  destroyRoute: () => dispatch(deleteRoute(route))
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
-)(Map);
+)(RouteIndexItem);

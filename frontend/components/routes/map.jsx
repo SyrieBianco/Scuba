@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { withRouter } from 'react-router-dom';
 
 //make start marker green flag, end checkered
 class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      markers: [],
+      waypoints: [],
+      latLngs: [],
+      waypoints_text: "",
+      encoded_waypoint_str: "",
+      distance: 0,
+      name: "",
+      notes: ""
     };
+    this.listenforClick = this.listenforClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.generateWaypointsText = this.generateWaypointsText.bind(this);
   }
 
   componentDidMount() {/*
@@ -27,72 +38,186 @@ class Map extends React.Component {
     };
     // this line actually creates the map and renders it into the DOM
     this.map = new google.maps.Map(map, options);
+    this.pathLine =  new google.maps.Polyline({
+      strokeColor: '#000000',
+      strokeOpacity: 1,
+      strokeWeight: 3,
+      map: this.map
+    });
+    google.maps.event.addListener(this.map, 'click', (e) => {
+      this.addLatLngToPath(e.latLng, this.pathLine);
+    });
 
-    this.listenForMove();
-    // this.listenForClick();
+    let input = document.getElementById('pac-input');
+    let searchBox = new google.maps.places.SearchBox(input);
+    this.registerListeners(searchBox, this.map);
+    // this.listenForMove();
+    this.listenforClick();
   }
 
-  update(property) {
-    return e => this.setState({ [property]: e.target.value });
+  listenforClick() {
+    const {markers} = this.state;
+    const {waypoints} = this.state;
+    const {latLngs} = this.state;
+    this.map.addListener('click', (e) => {
+      placeMarker(e.latLng, this.map);
+    });
+
+    const placeMarker = (position, map) => {
+      // let firstMarker = new google.maps.Marker({
+      //   position: position,
+      //   map: map,
+      // });
+      // let marker = new google.maps.Marker({
+      //   position: position,
+      //   map: map,
+      //   icon: {path: google.maps.SymbolPath.CIRCLE, scale: 4}
+      // });
+      let loc = new google.maps.LatLng(
+        position.lat(),
+        position.lng()
+      );
+      latLngs.push(loc);
+      waypoints.push({location: loc });
+
+      if (markers.length > 1) {
+        this.calcAndDisplayInfo();
+        markers.push(
+          new google.maps.Marker({
+            position: position,
+            map: map,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 4,
+              strokeWeight: 2.2
+            }
+          }));
+        } else if (markers.length === 1){
+          markers.push(
+            new google.maps.Marker({
+              position: position,
+              map: map,
+              icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 4,
+                strokeWeight: 2.2
+              }
+            }));
+        } else {
+        markers.push(new google.maps.Marker({
+          position: position,
+          map: map,
+        }));
+      }
+    };
   }
 
-  // listenForClick() {
-  //
-  //   marker.addListener('click', () => {
-  //     // alert(`clicked on: ${waypoint.name}`);
-  //     waypoints.push(new google.maps.Marker({
-  //       map: this.map,
-  //       icon: icon,
-  //       title: place.name,
-  //       position: place.geometry.locatio
-  //     }));
-  //   });
-  // }
+  addLatLngToPath(latLng, poly) {
+     let path = poly.getPath();
+     // Because path is an MVCArray, we can simply append a new coordinate
+     // and it will automatically appear
+     path.push(latLng);
+
+     // Update the text field to display the polyline encodings
+     let encodeString = google.maps.geometry.encoding.encodePath(path);
+     if (encodeString) {
+       this.setState({waypoints_text: encodeString});
+     }
+   }
 
 
-  listenForMove() {
-   /*
-    * we listen for the map to emit an 'idle' event, it does this when
-    * the map stops moving
-    */
-   google.maps.event.addListener(this.map, 'idle', () => {
-     const bounds = this.map.getBounds();
+  errors() {
+    if (this.props.errors) {
+      return (
+        this.props.errors.map(error => {
+          return (<li className="error" key={error}>{error}</li>);
+        })
+      );
+    }
+  }
 
-     console.log('center',
-        bounds.getCenter().lat(),
-        bounds.getCenter().lng());
-      console.log("north east",
-        bounds.getNorthEast().lat(),
-        bounds.getNorthEast().lng());
-      console.log("south west",
-        bounds.getSouthWest().lat(),
-        bounds.getSouthWest().lng());
-      console.log("zoom", this.map.getZoom());
+  generateWaypointsText() {
+    let text = "";
+    this.state.waypoints.forEach(waypoint => {
+      text += `${waypoint.location.lat()},${waypoint.location.lng()}|`;
+    });
+    this.state.waypoints_text = text.substring(0, text.length - 1);
+
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.generateWaypointsText();
+
+    let prop = {
+      waypoints_text: this.state.waypoints_text,
+      distance: this.state.distance,
+      // elevation: this.state,
+      name: this.state.name,
+      notes: this.state.notes,
+      run_ok: this.state.run_ok
+    };
+    this.props.createRoute(prop).then(data => this.props.history.push(`/routes/${data.route.id}`));
+  }
+
+  registerListeners(searchBox, map){
+    let self = this;
+
+    searchBox.addListener('places_changed', function() {
+      var place = searchBox.getPlaces()[0];
+      const latt = place.geometry.location.lat();
+      const long = place.geometry.location.lng();
+      map.panTo(new google.maps.LatLng(latt, long));
     });
   }
 
-    render() {
-    /*
-     * the div that will become the map is just an empty div
-     * we give it a 'ref' so we can easily get a pointer to the
-     * actual dom node up in componentDidMount
-     * DO NOT FORGET: you must style your map div and give it width + height
-     * or else it won't be visible!
-     */
+  update(property) {
+    return e => this.setState({ [property]: e.target.value })
+  }
+
+  calcAndDisplayInfo(){
+    const {markers} = this.state;
+    const {waypoints} = this.state;
+    const {latLngs} = this.state;
+    let dist = 0;
+    let dur = 0;
+    //reference : https://developers.google.com/maps/documentation/javascript/3.exp/reference#spherical
+    this.setState({
+      distance: google.maps.geometry.spherical.computeLength(latLngs)
+    }, () => console.log(this.state));
+
+  }
+
+
+  displayElevation() { //for later
+    // Create an ElevationService.
+    let elevator = new google.maps.ElevationService;
+    let path = this.state.waypoints.map((waypoint) => waypoint.location)
+  }
+
+  render() {
+    const { distance } = this.state;
+  /*
+   * the div that will become the map is just an empty div
+   * we give it a 'ref' so we can easily get a pointer to the
+   * actual dom node up in componentDidMount
+   */
+
     return (
       <div>
-        <span>MAP DEMO</span>
+        <ul>{this.errors()}</ul>
+        <input className="name-route-input" onChange={this.update('name')} placeholder="Route name"/>
+        <textarea className="notes-route-input" onChange={this.update('notes')} placeholder="Route notes"/>
+        <button onClick={this.handleSubmit}>Save Route</button>
         <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
-        <div className="route-type-btns">
-          <button>"Hi, I'm a button! Click ME!! "</button>
-        </div>
+        <ul className="route-info-list">
+          <li>Distance: {Math.round(100 * distance / 1609.34) / 100} miles</li>
+        </ul>
         <div id='map' ref='map'/>
-        <p>
-          wuzzzuuuup
-        </p>
+        <div id="elevation_chart"></div>
       </div>
     );
   }
 }
 
-export default Map;
+export default withRouter(Map);
