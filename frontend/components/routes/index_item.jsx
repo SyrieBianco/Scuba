@@ -11,6 +11,9 @@ class RouteIndexItem extends React.Component {
   handleDelete(){
     this.props.destroyRoute();
   }
+  // <Link to={`/routes/${route.id}/edit`}>
+  //   <button className="edit-button">Edit</button>
+  // </Link>
 
  render() {
     const { route, destroyRoute } = this.props;
@@ -24,9 +27,6 @@ class RouteIndexItem extends React.Component {
         </Link>
 
        <button onClick={this.handleDelete} className="delete-button">Delete</button>
-        <Link to={`/routes/${route.id}/edit`}>
-          <button className="edit-button">Edit</button>
-        </Link>
       </li>
     );
   }

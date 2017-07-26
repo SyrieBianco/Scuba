@@ -13,9 +13,11 @@ class DecodedMap extends React.Component {
 
   componentDidMount() {
     const options = {
-      center: this.state.latLngs[0],
-      zoom: 12,
-      mapTypeControl: false
+      disableDefaultUI: true,
+      draggable: false,
+      gestureHandling: 'none',
+      scrollwheel: false,
+      disableDoubleClickZoom: true
     };
     const map = ReactDOM.findDOMNode(this.refs[`${this.props.route.id}`]);
     this.map = new google.maps.Map(map, options);
@@ -26,7 +28,7 @@ class DecodedMap extends React.Component {
       map: this.map,
       draggable: false
     });
-    
+
     this.bounds = new google.maps.LatLngBounds();
     this.state.latLngs.forEach(latLng => {
       this.pathLine.getPath().push(latLng);
