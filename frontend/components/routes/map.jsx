@@ -11,14 +11,16 @@ class Map extends React.Component {
       waypoints: [],
       latLngs: [],
       waypoints_text: "",
-      encoded_waypoint_str: "",
       distance: 0,
       name: "",
       notes: ""
     };
+
     this.listenforClick = this.listenforClick.bind(this);
+    this.resetLine = this.resetLine.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.generateWaypointsText = this.generateWaypointsText.bind(this);
+    this.deleteMarkers = this.deleteMarkers.bind(this);
+    this.undo = this.undo.bind(this);
   }
 
   componentDidMount() {/*
@@ -36,8 +38,16 @@ class Map extends React.Component {
           style: google.maps.MapTypeControlStyle.DEFAULT
           }
     };
-    // this line actually creates the map and renders it into the DOM
     this.map = new google.maps.Map(map, options);
+    this.resetLine();
+    let input = document.getElementById('pac-input');
+    let searchBox = new google.maps.places.SearchBox(input);
+    this.registerListeners(searchBox, this.map);
+    // this.listenForMove();
+    this.listenforClick();
+  }
+
+  resetLine() {
     this.pathLine =  new google.maps.Polyline({
       strokeColor: '#000000',
       strokeOpacity: 1,
@@ -47,12 +57,6 @@ class Map extends React.Component {
     google.maps.event.addListener(this.map, 'click', (e) => {
       this.addLatLngToPath(e.latLng, this.pathLine);
     });
-
-    let input = document.getElementById('pac-input');
-    let searchBox = new google.maps.places.SearchBox(input);
-    this.registerListeners(searchBox, this.map);
-    // this.listenForMove();
-    this.listenforClick();
   }
 
   listenforClick() {
@@ -64,22 +68,12 @@ class Map extends React.Component {
     });
 
     const placeMarker = (position, map) => {
-      // let firstMarker = new google.maps.Marker({
-      //   position: position,
-      //   map: map,
-      // });
-      // let marker = new google.maps.Marker({
-      //   position: position,
-      //   map: map,
-      //   icon: {path: google.maps.SymbolPath.CIRCLE, scale: 4}
-      // });
       let loc = new google.maps.LatLng(
         position.lat(),
         position.lng()
       );
       latLngs.push(loc);
       waypoints.push({location: loc });
-
       if (markers.length > 1) {
         this.calcAndDisplayInfo();
         markers.push(
@@ -93,6 +87,7 @@ class Map extends React.Component {
             }
           }));
         } else if (markers.length === 1){
+          this.calcAndDisplayInfo();
           markers.push(
             new google.maps.Marker({
               position: position,
@@ -125,6 +120,30 @@ class Map extends React.Component {
      }
    }
 
+   deleteMarkers() {
+    //  this.state.markers.forEach(marker => {marker.setMap(null);});
+    //  this.pathLine.setMap(null);
+    //  this.oldPathLine = this.pathLine;
+    //  this.oldMarkers = this.state.markers;
+    //  this.prevState = this.state;
+    //  this.setState({
+    //    markers: [],
+    //    waypoints: [],
+    //    latLngs: [],
+    //    waypoints_text: "",
+    //    distance: 0,
+    //    name: "",
+    //    notes: ""}, () => {
+    //      this.resetLine();
+    //    }
+    //  );
+   }
+
+   undo(){
+    //  this.setState(this.prevState);
+    //  this.oldPathLine.setMap(this.map);
+   }
+
 
   errors() {
     if (this.props.errors) {
@@ -134,15 +153,6 @@ class Map extends React.Component {
         })
       );
     }
-  }
-
-  generateWaypointsText() {
-    let text = "";
-    this.state.waypoints.forEach(waypoint => {
-      text += `${waypoint.location.lat()},${waypoint.location.lng()}|`;
-    });
-    this.state.waypoints_text = text.substring(0, text.length - 1);
-
   }
 
   handleSubmit(e) {
@@ -183,8 +193,7 @@ class Map extends React.Component {
     let dur = 0;
     //reference : https://developers.google.com/maps/documentation/javascript/3.exp/reference#spherical
     this.setState({
-      distance: google.maps.geometry.spherical.computeLength(latLngs)
-    }, () => console.log(this.state));
+      distance: google.maps.geometry.spherical.computeLength(latLngs)});
 
   }
 
@@ -192,7 +201,7 @@ class Map extends React.Component {
   displayElevation() { //for later
     // Create an ElevationService.
     let elevator = new google.maps.ElevationService;
-    let path = this.state.waypoints.map((waypoint) => waypoint.location)
+    let path = this.state.waypoints.map((waypoint) => waypoint.location);
   }
 
   render() {
@@ -210,6 +219,8 @@ class Map extends React.Component {
         <textarea className="notes-route-input" onChange={this.update('notes')} placeholder="Route notes"/>
         <button onClick={this.handleSubmit}>Save Route</button>
         <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
+        <button onClick={this.deleteMarkers}>Clear Map</button>
+        <button onClick={this.undo}>Undo</button>
         <ul className="route-info-list">
           <li>Distance: {Math.round(100 * distance / 1609.34) / 100} miles</li>
         </ul>
