@@ -14,14 +14,14 @@ import { AuthRoute, ProtectedRoute } from '../util/router_util';
 
 import NavbarContainer from "./navbar/navbar_container.js";
 import SessionFormContainer from "./session_form/session_form_container";
-import DiveFormContainer from "./dive/dive_form_container";
+import DiveFormContainer from "./dives/dive_form_container";
 import LandingImage from './landing/landing_image';
 import RoutesIndexContainer from './routes/routes_index_container';
 import NewRouteContainer from './routes/new_route_container';
 
-import NewDiveContainer from './dive/dive_form_container';
-import DiveFeedContainer from './dive/dive_feed_container';
-import DiveShowContainer from './dive/dive_show_container.js';
+import NewDiveContainer from './dives/dive_form_container';
+import DiveFeedContainer from './dives/dive_feed_container';
+import DiveShowContainer from './dives/dive_show_container.js';
 
 
 const App = () => {
