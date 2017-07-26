@@ -1,4 +1,4 @@
-html, body, section, h1, h2, h3, figure, div, header, form, button, label, input, hgroup, nav, a, ul, li, p {
+html, body, section, h1, h2, h3, figure, div, header, form, button, label, input, hgroup, nav, a, ul, li, p, select {
 
   margin: 0;
   border: 0;
@@ -25,6 +25,6 @@ body, html {
 }
 
 
-a, button, Link:hover {
+a, select, button, Link:hover {
   cursor: pointer;
 }

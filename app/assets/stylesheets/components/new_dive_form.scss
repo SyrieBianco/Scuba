@@ -49,7 +49,7 @@
 .new-dive-form-headers {
   display: flex;
   margin: 10px;
-  align-content: center;
+  align-items: center;
 
   // specific inputs
 
@@ -72,6 +72,22 @@
     text-align: end;
   }
 
+  .add-route, .route-input {
+      font-size: 11px;
+      font-family: system-ui;
+
+      background: rgb(248, 248, 248);
+
+      border: 1px grey solid;
+      border-radius: 1px;
+
+      margin: 0 15px;
+      padding: 9px 11px;
+  }
+
+  .add-route:hover {
+    background: rgb(235, 235, 235)
+  }
   .notes-input {
 
   }
@@ -90,6 +106,11 @@
     padding: 9px;
     border-radius: 1px;
     -webkit-appearance: none;
+
+    option {
+      text-align: center;
+    }
+
   }
 
   textarea {
@@ -118,4 +139,8 @@
 
 .new-dive-submit:hover {
   background: $darker-blue
+}
+
+.text {
+  font-size: 12px;
 }

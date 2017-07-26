@@ -76,12 +76,15 @@ class DiveForm extends React.Component {
                     onChange={this.update('route')}
                   >
 
-                <option value="" disabled="true"> -- select a route --  </option>
+                <option value="" disabled="true">
+                   select a route
+                 </option>
                   {routes.map((route) => {
                     return <option value={route.id} key={route.id}>{route.name}</option>;
                     })}
-
                 </select>
+                <p className="text">— or —</p>
+                <Link className="add-route" to="/new_route">add a route  + </Link>
               </label>
             </div>
 
