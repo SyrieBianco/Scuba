@@ -21,7 +21,7 @@ import NewRouteContainer from './routes/new_route_container';
 
 import NewDiveContainer from './dive/dive_form_container';
 import DiveFeedContainer from './dive/dive_feed_container';
-import DiveShowContainer from './dive/dive_show_container';
+import DiveShowContainer from './dive/dive_show_container.js';
 
 
 const App = () => {
