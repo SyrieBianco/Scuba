@@ -20,8 +20,8 @@ class RouteIndexItem extends React.Component {
     return (
      // <span> { route.elevation_change } </span>
       <li className="route-feed-item">
-        <DecodedMap route={route}/>
         <Link to={`/routes/${route.id}`}>
+          <DecodedMap route={route}/>
           <span> Name: { route.name } </span>
           <span> Distance: { route.distance } </span>
         </Link>

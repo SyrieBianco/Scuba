@@ -17,6 +17,10 @@ class DiveForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+  this.props.fetchRoutes();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createDive(this.state)
@@ -43,9 +47,7 @@ class DiveForm extends React.Component {
 
 
   render() {
-    const now = new Date().toISOString();
-    const today = now.slice(0,10);
-    const time = now.slice(11,19);
+    const { routes } = this.props;
 
     return (
       <section className="new-dive-page">
@@ -73,12 +75,12 @@ class DiveForm extends React.Component {
                     value={this.state.route || ""}
                     onChange={this.update('route')}
                   >
-                  <option value="" disabled="true"> -- select a route --  </option>
-                  <option value="Your route 1">Your route 1</option>
-                  <option value="Your route 2">Your route 2</option>
-                  <option value="Your route 3">Your route 3</option>
-                  <option value="Your route 4">Your route 4</option>
-                  <option value="Add a new route">Add a new route</option>
+
+                <option value="" disabled="true"> -- select a route --  </option>
+                  {routes.map((route) => {
+                    return <option value={route.id} key={route.id}>{route.name}</option>;
+                    })}
+
                 </select>
               </label>
             </div>
@@ -89,7 +91,6 @@ class DiveForm extends React.Component {
               className="date-input"
               type="date"
               value={this.state.date || ''}
-              placeholder="2006-12-03"
               onChange={this.update('date')}
               />
           </label>
@@ -99,7 +100,6 @@ class DiveForm extends React.Component {
               className="time-input"
               type="time"
               value={this.state.start_time}
-              placeholder={time}
               onChange={this.update('start_time')}
               />
           </label>
