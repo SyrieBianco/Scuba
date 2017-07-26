@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725161226) do
+ActiveRecord::Schema.define(version: 20170726015013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 20170725161226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dive_id"], name: "index_elevations_on_dive_id", using: :btree
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.integer  "user_id",        null: false
+    t.string   "name",           null: false
+    t.text     "waypoints_text", null: false
+    t.float    "distance",       null: false
+    t.text     "notes"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["name"], name: "index_routes_on_name", unique: true, using: :btree
+    t.index ["user_id"], name: "index_routes_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
