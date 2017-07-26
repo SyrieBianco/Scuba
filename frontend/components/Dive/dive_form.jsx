@@ -71,7 +71,6 @@ class DiveForm extends React.Component {
                 <select
                     className="route-input"
                     value={this.state.route || ""}
-                    placeholder="e.g. Barracuda Point"
                     onChange={this.update('route')}
                   >
                   <option value="" disabled="true"> -- select a route --  </option>
