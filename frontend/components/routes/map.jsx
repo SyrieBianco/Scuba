@@ -157,7 +157,6 @@ class Map extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.generateWaypointsText();
 
     let prop = {
       waypoints_text: this.state.waypoints_text,
@@ -165,7 +164,6 @@ class Map extends React.Component {
       // elevation: this.state,
       name: this.state.name,
       notes: this.state.notes,
-      run_ok: this.state.run_ok
     };
     this.props.createRoute(prop).then(data => this.props.history.push(`/routes/${data.route.id}`));
   }
@@ -212,6 +210,8 @@ class Map extends React.Component {
    * actual dom node up in componentDidMount
    */
 
+   // <button onClick={this.undo}>Undo</button>
+   // <button onClick={this.deleteMarkers}>Clear Map</button>
     return (
       <div>
         <ul>{this.errors()}</ul>
@@ -219,8 +219,6 @@ class Map extends React.Component {
         <textarea className="notes-route-input" onChange={this.update('notes')} placeholder="Route notes"/>
         <button onClick={this.handleSubmit}>Save Route</button>
         <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
-        <button onClick={this.deleteMarkers}>Clear Map</button>
-        <button onClick={this.undo}>Undo</button>
         <ul className="route-info-list">
           <li>Distance: {Math.round(100 * distance / 1609.34) / 100} miles</li>
         </ul>

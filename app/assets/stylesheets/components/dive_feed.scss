@@ -41,6 +41,12 @@
     align-items: center;
   }
 
+  a:hover {
+    .feed-plus-button {
+      background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/square-add-button_sf46rz.png");
+    }
+  }
+
 }
 
 // buttons
