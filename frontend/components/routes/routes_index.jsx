@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import RouteIndexItemContainer from './index_item_container';
-import { slide as Menu } from 'react-burger-menu';
 import RouteShowContainer from './route_show';
 
 class RoutesIndex extends React.Component {
@@ -28,7 +27,7 @@ class RoutesIndex extends React.Component {
       <div className="routes-index-page">
         <h1 className="form-header">My Dive Routes</h1>
           <Link to='/new_route' className="new-route-button">Create New Route</Link>
-          <ul className="menu-item"  onClick={this.toggleSidebar}>
+          <ul>
             {routeItems}
           </ul>
       </div>
