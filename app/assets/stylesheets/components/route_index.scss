@@ -1,0 +1,53 @@
+@import "../base/colors";
+
+.routes-index-header-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.route-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+
+  width: 960px;
+  margin: 25px;
+  border-top: 1px solid $light-gray;
+
+}
+
+
+
+
+.route-feed-item {
+  height: 361px;
+  width: 278.45px;
+
+  margin: 20px;
+
+}
+
+
+
+.new-route-button {
+  background: $blue;
+
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+
+  padding: 9px;
+  width: 125px;
+
+  margin-left: 43px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  transition: .4s;
+}
+
+.new-route-button:hover {
+  background: $darker-blue
+}

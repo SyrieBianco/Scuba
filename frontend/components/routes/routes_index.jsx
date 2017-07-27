@@ -16,7 +16,8 @@ class RoutesIndex extends React.Component {
 
   render() {
     const {routes} = this.props;
-    if (!routes) {return null};
+    if (!routes) {return null;}
+
     const routeItems = this.props.routes.map(route => (
         <RouteIndexItemContainer
           key={ route.id }
@@ -24,12 +25,17 @@ class RoutesIndex extends React.Component {
       )
     );
     return (
-      <div className="routes-index-page">
-        <h1 className="form-header">My Dive Routes</h1>
+      <div className="full-page-component">
+
+        <hgroup className="routes-index-header-group">
+          <h1 className="form-header">My Dive Routes</h1>
           <Link to='/new_route' className="new-route-button">Create New Route</Link>
-          <ul>
-            {routeItems}
-          </ul>
+        </hgroup>
+
+        <ul className="route-list">
+          {routeItems}
+        </ul>
+
       </div>
     );
   }
