@@ -11,8 +11,8 @@
 User.delete_all
 
 demo = User.create!(
-  username: 'JacquesCousteau',
-  password: 'password'
+  username: "JacquesCousteau",
+  password: "password"
 )
 
 # routes

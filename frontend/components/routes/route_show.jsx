@@ -13,15 +13,15 @@ class RouteShow extends React.Component {
     const { route } = this.props;
     // <li>Elevation change: {route.elevation_change}</li>
     return (
-    <div>
-      <ul className="route-show">
-        <li>Name: {route.name}</li>
-        <li>Distance: {Math.round(100 * route.distance / 1609.34) / 100} miles</li>
-        <li>Notes: {route.notes}</li>
-      </ul>
+    <div className="route-show-page">
+      <div className="route-show">
+        <h2>Name: {route.name}</h2>
+        <h2>Distance: {Math.round(100 * route.distance / 1609.34) / 100} miles</h2>
+        <h2>Notes: {route.notes}</h2>
+      </div>
     </div>
   );
-};
-};
+}
+}
 
 export default RouteShow;

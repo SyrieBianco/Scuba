@@ -48,33 +48,3 @@
   }
 
 }
-
-// buttons
-
-.delete-button {
-  // background: rgba(240, 240, 240, .75);
-  background: transparentize($light-gray, .6);
-  border-radius: 2px;
-  padding: 7px 10px;
-}
-
-.delete-button:hover {
-  // background: rgba(230, 230, 230, 1);
-  background: $light-gray;
-}
-
-.feed-plus-button {
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-  display: inline-block;
-  background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/add_1_xoiuzu.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.feed-plus-button:hover {
-  background-image: url("http://res.cloudinary.com/syriebianco/image/upload/v1500915136/square-add-button_sf46rz.png");
-}

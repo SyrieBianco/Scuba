@@ -7,7 +7,6 @@ import RouteShowContainer from './route_show';
 class RoutesIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
   componentDidMount() {
@@ -15,15 +14,6 @@ class RoutesIndex extends React.Component {
     this.menuOpen = true;
   }
 
-  toggleSidebar() {
-    console.log("here");
-    this.menuOpen = !this.menuOpen;
-    console.log(this.menuOpen);
-  }
-
-  isMenuOpen () {
-    return this.state.isOpen;
-  }
 
   render() {
     const {routes} = this.props;
@@ -36,19 +26,11 @@ class RoutesIndex extends React.Component {
     );
     return (
       <div className="routes-index-page">
-
-        <Menu
-           right
-           isOpen={ this.menuOpen }
-           onStateChange={ this.isMenuOpen }
-        >
-          <Link to='/new_route'><button className="new-route-btn">New Route</button></Link>
+        <h1 className="form-header">My Dive Routes</h1>
+          <Link to='/new_route' className="new-route-button">Create New Route</Link>
           <ul className="menu-item"  onClick={this.toggleSidebar}>
             {routeItems}
           </ul>
-        </Menu>
-
-          <h1>dem routes</h1>
       </div>
     );
   }
