@@ -6,5 +6,6 @@ json.extract! dive,
   :elevation_id,
   :start_time,
   :notes,
-  :duration,
+  :duration_string,
+  :duration_seconds,
   :air_consumed

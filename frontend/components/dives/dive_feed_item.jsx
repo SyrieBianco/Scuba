@@ -9,15 +9,20 @@ class DiveFeedItem extends React.Component {
 
   render() {
     const { dive, destroyDive } = this.props;
+    const date = new Date(dive.start_time * 1000);
 
     return (
 
       <li className="dive-feed-item">
-        <Link to={`/dives/${dive.id}`}>
-          <span> { dive.title } </span>
-      </Link>
+        <div className="dive-info">
+          <Link to={`/dives/${dive.id}`}>
+            <span>{ dive.title }</span>
+          </Link>
+        </div>
 
-      <button onClick={destroyDive} className="delete-button">Delete</button>
+        <span>{date.toDateString()}</span>
+
+        <button onClick={destroyDive} className="delete-button">Delete</button>
 
 
       </li>
