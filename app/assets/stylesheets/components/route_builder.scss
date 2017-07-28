@@ -1,11 +1,20 @@
-#pac-input {
+@import "../base/colors";
+
+.route-builder {
+  .form-header {
+    margin-top: 20px
+  }
+}
+
+input#pac-input {
   position: absolute;
   z-index: 100000;
-  top: 100px;
+  top: 142px;
   left: 120px;
   border: none;
-  border-radius: 1px;
-  padding: 3px;
+  border-radius: 2px;
+  padding: 5px;
+  background-color: white;
 }
 
 input#pac-input:focus {
@@ -26,4 +35,39 @@ input#pac-input:focus {
   z-index: 100001;
   top: 90px;
   left: 123px;
+}
+
+.save-route-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+
+  background: rgba(240, 240, 240, .85);
+  position: absolute;
+  top: 200px;
+  left: 30px;
+
+  padding: 10px;
+
+  width: 250px;
+  height: 200px;
+    input {
+      background: white;
+      border: 1px solid black;
+      padding: 5px;
+    }
+    textarea {
+    }
+    button {
+      background: $teal;
+      border-radius: 2px;
+      padding: 5px;
+
+    }
+}
+
+li#distance-reader {
+  color: white;
+  background-color: transparent;
 }
