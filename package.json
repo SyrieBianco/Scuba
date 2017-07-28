@@ -34,4 +34,5 @@
   },
   "devDependencies": {
   "redux-logger": "^2.8.1"
+  }
 }
