@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ShowMap from '../routes/show_map';
+import { selectRoute } from '../../reducers/selectors';
+
 
 class DiveShow extends React.Component {
 
   componentDidMount() {
-    const { dive } = this.props;
+    const { dive, route } = this.props;
     this.props.fetchDive(dive.id);
     this.props.fetchRoute(dive.route_id);
   }
   render() {
-    const { dive } = this.props;
+    const { dive, route } = this.props;
     const date = new Date(dive.start_time * 1000);
     const time = date.toLocaleTimeString('en-US');
 
@@ -44,6 +46,7 @@ class DiveShow extends React.Component {
           </div>
 
           <figure className="route-fig">
+
           </figure>
 
         </div>
@@ -52,6 +55,7 @@ class DiveShow extends React.Component {
   );
 }
 }
-// <ShowMap route={dive.route}/>
 
 export default DiveShow;
+
+            // <ShowMap route={route}/>
