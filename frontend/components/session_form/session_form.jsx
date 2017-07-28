@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
      if (nextProps.loggedIn) {
-       this.props.history.push('/');
+       this.props.history.push('/dashboard');
      }
    }
 
@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
                   className="session-form-input"
                   />
               </div>
-              
+
             <label className="login-errors">{ this.renderErrors() }</label>
             <input type="submit" value="Submit"
               className="session-form-submit"/>

@@ -4,6 +4,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //nav-bar
 
+.dashboard {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  h1 {
+    font-weight: 300;
+    color: $not-so-dark-blue;
+
+    border-top: 1px solid $light-gray;
+
+    padding: 25px;
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+}
+
+
+
+
+
+
+
+
 figure {
   display: inline;
 }

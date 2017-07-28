@@ -17,18 +17,21 @@ class Dashboard extends React.Component {
     return (
       <div className="full-page-component">
         <h1 className="form-header">Dashboard</h1>
+        <div className="dashboard">
 
         <section className="Personal Data">
-          {currentUser.username + "'s stats"}
+          <h2>{currentUser.username + "'s stats"}</h2>
         </section>
 
         <section className="totals">
-          <h2>Totals</h2>
+          <h3>Totals</h3>
           <table>
             <thead>
-              <th>Number of Dives</th>
-              <th>Number of Dive Sites</th>
-              <th>Time Spent Underwater</th>
+              <tr>
+                <th>Number of Dives</th>
+                <th>Number of Dive Sites</th>
+                <th>Time Spent Underwater</th>
+              </tr>
             </thead>
             <tbody>
               <td>data</td>
@@ -39,10 +42,10 @@ class Dashboard extends React.Component {
         </section>
 
         <section className="otherstats">
-          <h2>Averages and Personal Bests</h2>
+          <h3>Averages and Personal Bests</h3>
             <table>
               <thead>
-                <th className="field">.</th>
+                <th className="field"></th>
                 <th>Dive Time</th>
                 <th>Dive Length</th>
                 <th>Breath Rate</th>
@@ -65,7 +68,7 @@ class Dashboard extends React.Component {
         <figure>
           Heatmap
         </figure>
-
+      </div>
       </div>
     );
   }
