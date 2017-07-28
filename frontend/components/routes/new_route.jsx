@@ -11,9 +11,9 @@ class NewRoute extends React.Component {
     const mapCenter = { lat: 37.7758, lng: -122.435 };
 
     return(
-      <div className="new-route-page">
+      <div className="full-page-component">
         <div className="route-builder">
-          <h1>Build A Route</h1>
+          <h1 className="form-header">Build A Route</h1>
           <MapContainer center={mapCenter}/>,
         </div>
       </div>

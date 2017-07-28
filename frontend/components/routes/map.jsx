@@ -215,15 +215,20 @@ class Map extends React.Component {
     return (
       <div>
         <ul>{this.errors()}</ul>
+
         <input className="name-route-input" onChange={this.update('name')} placeholder="Route name"/>
+
         <textarea className="notes-route-input" onChange={this.update('notes')} placeholder="Route notes"/>
+
         <button onClick={this.handleSubmit}>Save Route</button>
+
         <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
+
         <ul className="route-info-list">
           <li>Distance: {Math.round(100 * distance / 1609.34) / 100} miles</li>
         </ul>
+
         <div id='map' ref='map'/>
-        <div id="elevation_chart"></div>
       </div>
     );
   }
