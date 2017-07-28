@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Actions from '../../actions/session_actions';
-import Component from '';
+import Dashboard from './dashboard';
 
 const mapStateToProps = (state) => {
   return {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch, state) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Component);
+)(Dashboard);

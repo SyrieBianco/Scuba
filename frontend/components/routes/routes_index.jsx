@@ -17,7 +17,7 @@ class RoutesIndex extends React.Component {
   render() {
     const {routes} = this.props;
     if (!routes) return null;
-    if (Object.keys(routes).length === 0) return null;}
+    if (Object.keys(routes).length === 0) return null;
 
     const routeItems = this.props.routes.map(route => (
         <RouteIndexItemContainer
