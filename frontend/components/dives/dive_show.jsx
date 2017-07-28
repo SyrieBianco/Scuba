@@ -7,9 +7,8 @@ import { selectRoute } from '../../reducers/selectors';
 class DiveShow extends React.Component {
 
   componentDidMount() {
-    const { dive} = this.props;
-    this.props.fetchDive(dive.id);
-    this.props.fetchRoute(dive.route_id);
+    const { diveId } = this.props;
+    this.props.fetchDive(diveId).then(dive => this.props.fetchRoute(dive.dive.route_id));
   }
   render() {
     const { dive, routes } = this.props;

@@ -120,7 +120,7 @@
     text-align: end;
   }
 
-  .add-route, .route-input {
+  .route-input {
       font-size: 11px;
       font-family: system-ui;
 
@@ -133,13 +133,46 @@
       padding: 9px 11px;
   }
 
+  .route-input {
+      font-size: 11px;
+      font-family: system-ui;
+
+      background: rgb(248, 248, 248);
+
+      border: 1px grey solid;
+      border-radius: 1px;
+
+      margin: 0 15px;
+      padding: 9px 11px;
+  }
+
+
+  .add-route {
+    background: $blue;
+
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+
+    padding: 9px;
+    width: 125px;
+
+    margin: 0 15px;
+
+    border-radius: 2px;
+
+    transition: .4s;
+  }
+
   .add-route:hover {
-    background: rgb(235, 235, 235)
-  }
-  .notes-input {
-
+    background: $darker-blue
   }
 
+
+  p.emptyRoutes {
+    padding: 25px;
+  }
 
 
   input {

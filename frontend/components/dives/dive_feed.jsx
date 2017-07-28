@@ -28,7 +28,12 @@ class DiveFeed extends React.Component {
       <div className="dives-feed">
         <h1 className="form-header">Your Logged Dives</h1>
         <ul className="dive-list">
-          {diveItems.length === 0 ? <li className="noDives">You haven't logged any dives yet <br/> Get started by logging a dive by clicking below</li> : diveItems}
+          {diveItems.length === 0 ? <li className="empty-index">You haven't logged any dives yet!
+            <br/>
+            <Link className="inline-link" to="/new_dive">{"Log a dive "}</Link>
+            or
+            <Link className="inline-link" to="/new_route">{" create a route "}</Link>
+            to get started</li> : diveItems}
         </ul>
         <div className="new-dive-links">
           <Link to='/new_dive' className="new-dive">
