@@ -72,7 +72,7 @@ class DiveForm extends React.Component {
               <label className="new-dive-form-headers"> <p>Dive Route:</p>
                 <select
                     className="route-input"
-                    value={this.state.route || ""}
+                    value={this.state.route_id || ""}
                     onChange={this.update('route_id')}
                   >
 
@@ -183,7 +183,7 @@ class DiveForm extends React.Component {
         </div>
         </form>
       </div>
-      
+
       </section>
     );
   }
