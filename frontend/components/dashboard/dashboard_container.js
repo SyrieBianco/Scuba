@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 import { fetchDives } from '../../actions/dive_actions';
 import { fetchRoutes } from '../../actions/route_actions';
-import { allDives } from '../../reducers/selectors';
+import { allDives, allRoutes } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  dives: allDives(state)
+  dives: allDives(state),
+  routes: allRoutes(state)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -38,9 +38,8 @@ class DiveShow extends React.Component {
             </div>
 
             <div className="stats-div">
-              <h3>Duration: <p>{dive.duration}</p></h3>
+              <h3>Duration: <p>{dive.duration_string}</p></h3>
               <h3>Air consumption: <p>{dive.air_consumed} psi</p></h3>
-              <h3>Avg Depth: <p></p></h3>
             </div>
 
             <div className="notes-div">

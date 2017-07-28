@@ -10,28 +10,72 @@
 
   width: 100%;
 
-  h1 {
-    font-weight: 300;
-    color: $not-so-dark-blue;
-
-    border-top: 1px solid $light-gray;
-
-    padding: 25px;
-  }
-
   h2 {
+    color: $blue;
+    font-weight: 400;
+    // letter-spacing: .2em;
+
+
+    // border-bottom: 1px solid $lightest-gray;
+
+    padding: 23px;
+    // padding-left: 40px;
+    // padding-bottom: 10px;
 
   }
 
   h3 {
+    font-size: 20px;
+    margin: 20px 40px;
+    text-align: center;
+
 
   }
 }
 
+.totals {
+  display: flex;
+  align-items: center;
 
+  border-bottom: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+}
 
+.otherstats {
+  display: flex;
+  align-items: center;
 
+  border-bottom: 1px solid $light-gray;
+}
 
+th, td {
+  text-align: center;
+  padding: 15px;
+  padding-top: 4px;
+  font-size: 20px;
+    .bestDivelink {
+      color: $teal
+    }
+}
+
+th.stats-header {
+  font-weight: 300;
+  color: $teal;
+
+  padding: 15px;
+  padding-bottom: 5px;
+}
+
+th.stats-sider {
+  font-weight: 100;
+  font-size: 15px;
+  color: $gray;
+
+  text-align: right;
+
+  // padding: 15px;
+  // padding-bottom: 5px;
+}
 
 
 

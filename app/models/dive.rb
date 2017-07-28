@@ -6,6 +6,7 @@ class Dive < ApplicationRecord
             presence: true
   validate :no_future_dives
   validate :valid_start_and_end_pressure
+  validate :valid_start_and_end_time
 
   belongs_to :user
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import * as Util from '../../util/stats_util';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -9,10 +10,18 @@ class Dashboard extends React.Component {
     //bindings
   }
 
-// instance methods
+  componentDidMount() {
+    this.props.fetchDives();
+    this.props.fetchRoutes();
+  }
 
   render() {
-    const {currentUser} = this.props;
+    const {currentUser, dives, routes} = this.props;
+
+    if ( !dives || !routes ) return null;
+    if ( dives.length === 0 || routes.length === 0 ) return null;
+
+    const {bestDive, bestRate} = Util.bestBreath(dives);
 
     return (
       <div className="full-page-component">
@@ -28,16 +37,16 @@ class Dashboard extends React.Component {
           <table>
             <thead>
               <tr>
-                <th>Number of Dives</th>
-                <th>Number of Dive Sites</th>
-                <th>Time Spent Underwater</th>
+                <th className="stats-header">Number of Dives</th>
+                <th className="stats-header">Number of Dive Sites</th>
+                <th className="stats-header">Time Spent Underwater</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
+                <td>{ dives.length }</td>
+                <td>{ routes.length }</td>
+                <td>{ Util.totalTime(dives) }</td>
               </tr>
             </tbody>
           </table>
@@ -49,33 +58,35 @@ class Dashboard extends React.Component {
               <thead>
                 <tr>
                   <th className="field"></th>
-                  <th>Dive Time</th>
-                  <th>Dive Length</th>
-                  <th>Breath Rate</th>
+                  <th className="stats-header">Dive Time</th>
+                  <th className="stats-header">Breathing Rate</th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
-                  <th>avg</th>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
+                  <th className="stats-sider">avg</th>
+                  <td>{Util.avgDiveTime(dives)}</td>
+                  <td>{Util.avgBreathingRate(dives)} cu ft per second</td>
                 </tr>
               </tbody>
+
               <tbody>
                 <tr>
-                  <th>best</th>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
+
+                  <th className="stats-sider">best</th>
+                  <td> — </td>
+                  <td className="best-dive-link">
+                    <Link to={"dive/" + bestDive.id}>
+                      {bestRate} cu ft per second
+                    </Link>
+                  </td>
+
                 </tr>
               </tbody>
             </table>
         </section>
 
-        <figure>
-          Heatmap
-        </figure>
       </div>
       </div>
     );
