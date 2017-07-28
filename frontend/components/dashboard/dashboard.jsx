@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
               <tr>
                 <td>{ dives.length === 0 ? "—" : dives.length }</td>
                 <td>{ routes.length === 0 ? "—" : routes.length }</td>
-                <td>{ Util.totalTime(dives) === 0 ? "—" : Util.totalTime(dives) }</td>
+                <td>{ dives.length === 0 ? "—" : Util.totalTime(dives) }</td>
               </tr>
             </tbody>
           </table>
@@ -102,8 +102,8 @@ class Dashboard extends React.Component {
               <tbody>
                 <tr>
                   <th className="stats-sider">avg</th>
-                  <td>{Util.avgDiveTime(dives) === 0 ? "—" : Util.avgDiveTime(dives)}</td>
-                  <td>{Util.avgBreathingRate(dives) === 0 ? "—" : Util.avgBreathingRate(dives)} cu ft per second</td>
+                  <td>{dives.length === 0 ? "—" : Util.avgDiveTime(dives)}</td>
+                  <td>{dives.length === 0 ? "—" : Util.avgBreathingRate(dives)} cu ft per second</td>
                 </tr>
               </tbody>
 

@@ -57,20 +57,32 @@
 }
 
 .route-info-box {
-  padding: 15px 20px;
+  padding: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 45%;
 
+  div.distance {
+    display: flex;
+    flex-direction: column;
+
+
+    b {
+      font-size: 20px;
+      color: black
+    }
+
+    span {
+      margin: 3px;
+    }
 }
 
-.distance {
-
-  strong {
-
-  }
 
 
 }
 
 .route-title {
-  font-size: 18px;
+  font-size: 23px;
   color: $teal;
 }
