@@ -16,7 +16,8 @@ class RoutesIndex extends React.Component {
 
   render() {
     const {routes} = this.props;
-    if (!routes) {return null;}
+    if (!routes) return null;
+    if (Object.keys(routes).length === 0) return null;}
 
     const routeItems = this.props.routes.map(route => (
         <RouteIndexItemContainer
@@ -33,7 +34,12 @@ class RoutesIndex extends React.Component {
         </hgroup>
 
         <ul className="route-list">
-          {routeItems}
+          {routeItems.length === 0 ? <li className="noDives">
+            You haven't created any routes yet
+            <br/>
+            Create a route to get started
+          </li>
+          : routeItems}
         </ul>
 
       </div>
