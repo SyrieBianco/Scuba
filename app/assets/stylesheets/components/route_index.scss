@@ -17,19 +17,6 @@
 
 }
 
-
-
-
-.route-feed-item {
-  height: 361px;
-  width: 278.45px;
-
-  margin: 20px;
-
-}
-
-
-
 .new-route-button {
   background: $blue;
 
@@ -50,4 +37,40 @@
 
 .new-route-button:hover {
   background: $darker-blue
+}
+
+
+
+// index items
+
+
+
+.route-feed-item {
+  height: 361px;
+  width: 278.45px;
+
+  color: $gray;
+
+  margin: 20px;
+  background: $lightest-gray;
+
+}
+
+.route-info-box {
+  padding: 15px 20px;
+
+}
+
+.distance {
+
+  strong {
+
+  }
+
+
+}
+
+.route-title {
+  font-size: 18px;
+  color: $teal;
 }

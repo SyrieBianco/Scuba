@@ -9,6 +9,7 @@ class DiveForm extends React.Component {
       title: '',
       notes: '',
       date: null,
+      tank_size: 0,
       start_time: 0,
       end_time: 0,
       start_air_pressure: 0,
@@ -84,7 +85,7 @@ class DiveForm extends React.Component {
                     })}
                 </select>
                 <p className="text">— or —</p>
-                <Link className="add-route" to="/new_route">add a route  + </Link>
+                <Link className="add-route" to="/new_route">add a route </Link>
               </label>
             </div>
 
@@ -117,25 +118,40 @@ class DiveForm extends React.Component {
           </label>
         </div>
 
-        <div className="air-pressure-inputs">
-
-          <label className="new-dive-form-headers"> Starting Air Pressure:
+        <div className="air-inputs">
+          <label className="new-dive-form-headers"> Tank Size:
             <input
               className="pressure-input"
               type="number"
-              value={this.state.start_air_pressure}
-              onChange={this.update('start_air_pressure')}
-              /> psi
+              value={this.state.tank_size}
+              onChange={this.update('tank_size')}
+              /> cu ft
           </label>
 
-          <label className="new-dive-form-headers"> Ending Air Pressure:
-            <input
-              className="pressure-input"
-              type="number"
-              value={this.state.end_air_pressure}
-              onChange={this.update('end_air_pressure')}
-              /> psi
-          </label>
+          <div className="pressure-readings">
+
+
+            <div className="pressure-reading-input">
+              <label className="new-dive-form-headers"> Initial Pressure Reading:
+                <input
+                  className="pressure-input"
+                  type="number"
+                  value={this.state.start_air_pressure}
+                  onChange={this.update('start_air_pressure')}
+                  /> psi
+              </label>
+
+              <label className="new-dive-form-headers"> Final Pressure Reading:
+                <input
+                  className="pressure-input"
+                  type="number"
+                  value={this.state.end_air_pressure}
+                  onChange={this.update('end_air_pressure')}
+                  /> psi
+              </label>
+            </div>
+          </div>
+
 
         </div>
 

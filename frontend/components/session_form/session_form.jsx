@@ -73,12 +73,14 @@ class SessionForm extends React.Component {
           <div className="session-form">
             <h1 className="session-form-header">{this.formHeader()}</h1>
               <button type="submit" value="Submit"/>
+
               <button
                 type="button"
                 className="session-form-submit"
                 onClick={this.handleDemo}>
                 Demo Log In
               </button>
+
               <div className='session-form-inputs'>
                 <input
                   type="text"
@@ -95,6 +97,7 @@ class SessionForm extends React.Component {
                   className="session-form-input"
                   />
               </div>
+              
             <label className="login-errors">{ this.renderErrors() }</label>
             <input type="submit" value="Submit"
               className="session-form-submit"/>

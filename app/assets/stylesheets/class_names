@@ -35,4 +35,4 @@ New Dive Form:
   - "new-dive-form-headers" -- label
   - "new-dive-inputs"
   - "date-time-inputs"
-  - "air-pressure-inputs"
+  - "air-inputs"

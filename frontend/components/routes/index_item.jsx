@@ -17,16 +17,33 @@ class RouteIndexItem extends React.Component {
 
  render() {
     const { route, destroyRoute } = this.props;
+
+    const distance = Math.round(route.distance * 100)/ 100;
+
     return (
      // <span> { route.elevation_change } </span>
       <li className="route-feed-item">
+
         <Link to={`/routes/${route.id}`}>
           <DecodedMap route={route}/>
-          <span> Name: { route.name } </span>
-          <span> Distance: { route.distance } </span>
         </Link>
 
-       <button onClick={this.handleDelete} className="delete-button">Delete</button>
+        <div className="route-info-box">
+
+          <h3><Link to={`/routes/${route.id}`} className="route-title">
+            { route.name }</Link></h3>
+
+            <div className="distance">
+              <b>{distance} meters </b>
+              <span> distance </span>
+            </div>
+
+        </div>
+
+        <span className="timestamps">
+
+        </span>
+
       </li>
     );
   }

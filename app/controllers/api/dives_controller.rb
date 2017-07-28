@@ -53,7 +53,8 @@ class Api::DivesController < ApplicationController
       :end_time,
       :date,
       :start_air_pressure,
-      :end_air_pressure
+      :end_air_pressure,
+      :tank_size
     )
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726015013) do
+ActiveRecord::Schema.define(version: 20170727222212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20170726015013) do
     t.datetime "updated_at",         null: false
     t.string   "duration"
     t.integer  "air_consumed"
+    t.string   "duration_string"
+    t.integer  "duration_seconds"
+    t.integer  "tank_size"
     t.index ["elevation_id"], name: "index_dives_on_elevation_id", using: :btree
     t.index ["route_id"], name: "index_dives_on_route_id", using: :btree
     t.index ["user_id"], name: "index_dives_on_user_id", using: :btree

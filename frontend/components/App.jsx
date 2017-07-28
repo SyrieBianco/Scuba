@@ -32,12 +32,12 @@ const App = () => {
     <Route path="/" component={NavbarContainer} />
 
     <Route exact path="/" component={LandingImage} />
-    <ProtectedRoute path="/routes" component={RoutesIndexContainer} />
-    <ProtectedRoute path="/routes/:routeId" component={RouteShowContainer}/>
     <Switch>
       <ProtectedRoute exact path="/new_dive" component={DiveFormContainer}/>
       <ProtectedRoute exact path="/new_route" component={NewRouteContainer} />
 
+      <ProtectedRoute exact path="/routes" component={RoutesIndexContainer} />
+      <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer}/>
 
       <ProtectedRoute exact path="/dives" component={DiveFeedContainer}/>
       <ProtectedRoute exact path="/dives/:diveId" component={DiveShowContainer}/>
