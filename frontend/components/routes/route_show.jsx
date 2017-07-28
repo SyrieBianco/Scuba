@@ -10,14 +10,14 @@ class RouteShow extends React.Component {
   componentDidMount() {
     this.props.fetchRoute(this.props.routeId);
   }
-  
+
   render() {
     const { route } = this.props;
     // <li>Elevation change: {route.elevation_change}</li>
     return (
     <div className="route-show-page">
       <div className="route-show-info">
-        <h2>Name: {route.name}</h2>
+        <h2 className="form-header">{route.name}</h2>
         <h2>Distance: {Math.round(100 * route.distance / 1609.34) / 100} miles</h2>
         <h2>Notes: {route.notes}</h2>
       </div>

@@ -2,44 +2,43 @@
 
 ***
 
-[Scuba](http://www.runaway.today) is a full-stack web application inspired by Strava. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+[Scuba](http://www.scuba.fitness) is a full-stack web application inspired by Strava, but repurposed to log, map, and track scuba dives and relevant information. Scuba uses a combination of Ruby on Rails for the backend with a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
 ## Key Features
 ***
 
 
+
 #### Generating Custom Mapping Routes
 
 
-![Map Builder](images/map_builder.png)
+![New Route](images/new_route.png)
 
-  Using the Google Maps API, the route builder enables users to create and save custom cycling and/or running routes. Routes can have multiple stops (waypoints), which the user selects by clicking on a map location. The user can easily search for a desired location with a convenient search box that uses Google's Place Autocomplete service. Users
-
-  To enhance the user experience, additional route information is provided in realtime while a user places route waypoints. Specifically, the route builder displays a precise overall route distance and estimated duration. In addition, the builder generates a visually appealing chart depicting elevation as the route progresses.
+  Using the Google Maps API, the route builder enables users to create and save custom scuba diving routes. Clicking the map makes markers akin to google maps directions. Using Google's Place Autocomplete service, users can quickly search for an indicated location.
 
 
 #### Displaying User Routes
 
 
-![Route Feed](images/route_feed.png)
+![Dive Routes](images/dive_routes.png)
 
-On the main routes page, users can view a gallery of their saved routes. Each route has a miniature projection of itself on the Google Maps API. Listed below this minimap are the route's key characteristics: title, distance, estimated duration, date of creation, and accessibility via bicycle/foot.
-
-
-#### Logging Personal Workouts
+The route index lists a user's saved routes. Each has a small instance of its path projected with the Google Maps API. Route information (title and distance) is displayed below this image.
 
 
-![New Workout Form](images/new_workout.png)
-
-A core function of Scuba is to enable users to log their workouts. Workouts can be designated as bike rides or runs, and can store their distance, duration, elevation change, notes, and a title. In addition, users can note that a certain workout was undertaken on one of that user's saved routes.
+#### Logging Personal Dives
 
 
-#### Displaying Previous Workouts
+![New Dive](images/new_dive.png)
+
+A core function of Scuba is to enable users to log their dives. Dives can store their distance, duration, air pressure delta, notes, and a title. Users also have the option to store a particular route that a dive followed.
 
 
-![Workout Feed](images/workout_feed.png)
+#### Displaying Previous Dives
 
-Users can view their previous workouts at a glance on the workout feed page. The feed is styled with a clear, straightforward perspective, helping users quickly and accurately interpret the data. Clicking one of the feed items takes the user to a more detailed view of that item.
+
+![Logged Dives](images/logged_dives.png)
+
+The dive feed page gives users a quick look that their stored dives. The feed is styled with a clear, straightforward perspective, helping users quickly and accurately interpret the data. Clicking one of the feed items takes the user to a more detailed and enlarged view of that dive.
 
 Additional Resources
 
@@ -51,7 +50,7 @@ Additional Resources
 
 Scuba's core functionality could be improved upon with the following features:
 
-*  Social Networking: users could "friend" other users, enabling messaging, sharing of routes, and the addition of friends' workouts on each user's workout feed page.
+*  Social Networking: users could "friend" other users, enabling messaging, sharing of routes, and the addition of friends' dives on each user's workout feed page.
 
 *  Global Statistics: users could view a global leaderboard and additional stats based on all Scuba users.
 
