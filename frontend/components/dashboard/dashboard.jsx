@@ -14,10 +14,35 @@ class Dashboard extends React.Component {
   render() {
 
     return (
-      <div className="full-page-container">
-        <h1 className="page-header">Dashboard</h1>
+      <div className="full-page-component">
+        <h1 className="form-header">Dashboard</h1>
 
+        <section className="Personal Data">
 
+        </section>
+
+        <section className="totals">
+          <table>
+            <tr>
+              <th>Number of Dives</th>
+              <th>Number of Dive Sites</th>
+              <th>Time Spent Underwater</th>
+            </tr>
+            <tr>
+              <td>data</td>
+              <td>data</td>
+              <td>data</td>
+            </tr>
+          </table>
+        </section>
+
+        <section className="otherstats">
+
+        </section>
+
+        <figure>
+          Heatmap
+        </figure>
 
       </div>
     );
