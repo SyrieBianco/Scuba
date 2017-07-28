@@ -6,11 +6,10 @@ import { selectDive, selectRoute } from '../../reducers/selectors';
 import DiveShow from './dive_show';
 //
 const mapStateToProps = (state, { match }) => {
-  const routes = state || {};
   return ({
     diveId: parseInt(match.params.diveId),
     dive: selectDive(state, match.params.diveId),
-    route: selectRoute(state, routes.keys[0])
+    routes: state.routes
   });
 };
 

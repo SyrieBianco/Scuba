@@ -7,14 +7,18 @@ import { selectRoute } from '../../reducers/selectors';
 class DiveShow extends React.Component {
 
   componentDidMount() {
-    const { dive, route } = this.props;
+    const { dive} = this.props;
     this.props.fetchDive(dive.id);
     this.props.fetchRoute(dive.route_id);
   }
   render() {
-    const { dive, route } = this.props;
+    const { dive, routes } = this.props;
+
     const date = new Date(dive.start_time * 1000);
     const time = date.toLocaleTimeString('en-US');
+
+    const route = selectRoute({routes}, dive.route_id);
+    if (Object.keys(route).length === 0) return null;
 
     return (
     <div>
@@ -46,7 +50,7 @@ class DiveShow extends React.Component {
           </div>
 
           <figure className="route-fig">
-
+            <ShowMap route={route}/>
           </figure>
 
         </div>
@@ -57,5 +61,3 @@ class DiveShow extends React.Component {
 }
 
 export default DiveShow;
-
-            // <ShowMap route={route}/>
