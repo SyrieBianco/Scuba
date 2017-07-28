@@ -34,9 +34,11 @@ class Dashboard extends React.Component {
               </tr>
             </thead>
             <tbody>
-              <td>data</td>
-              <td>data</td>
-              <td>data</td>
+              <tr>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+              </tr>
             </tbody>
           </table>
         </section>
@@ -45,22 +47,28 @@ class Dashboard extends React.Component {
           <h3>Averages and Personal Bests</h3>
             <table>
               <thead>
-                <th className="field"></th>
-                <th>Dive Time</th>
-                <th>Dive Length</th>
-                <th>Breath Rate</th>
+                <tr>
+                  <th className="field"></th>
+                  <th>Dive Time</th>
+                  <th>Dive Length</th>
+                  <th>Breath Rate</th>
+                </tr>
               </thead>
               <tbody>
-                <th>avg</th>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
+                <tr>
+                  <th>avg</th>
+                  <td>data</td>
+                  <td>data</td>
+                  <td>data</td>
+                </tr>
               </tbody>
               <tbody>
-                <th>best</th>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
+                <tr>
+                  <th>best</th>
+                  <td>data</td>
+                  <td>data</td>
+                  <td>data</td>
+                </tr>
               </tbody>
             </table>
         </section>

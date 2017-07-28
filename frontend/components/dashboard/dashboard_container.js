@@ -1,20 +1,18 @@
 import { connect } from 'react-redux';
-
-import Actions from '../../actions/session_actions';
 import Dashboard from './dashboard';
+import { fetchDives } from '../../actions/dive_actions';
+import { fetchRoutes } from '../../actions/route_actions';
+import { allDives } from '../../reducers/selectors';
 
-const mapStateToProps = ( { session } ) => {
+const mapStateToProps = state => ({
+  currentUser: state.session.currentUser,
+  dives: allDives(state)
+});
 
-  return {
-    currentUser: session.currentUser,
-  };
-};
-
-const mapDispatchToProps = (dispatch, state) => {
-  return {
-    //actions
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  fetchDives: () => dispatch(fetchDives()),
+  fetchRoutes: () => dispatch(fetchRoutes())
+});
 
 export default connect(
   mapStateToProps,

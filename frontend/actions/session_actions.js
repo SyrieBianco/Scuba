@@ -2,6 +2,7 @@ import * as API from '../util/session_api_util'
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CLEAR_STORE = "CLEAR_STORE";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -12,6 +13,12 @@ export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
+
+export const clearStore = () => {
+  return {
+    type: CLEAR_STORE
+  };
+};
 
 
 export const signup = user => dispatch => (
@@ -30,8 +37,13 @@ export const signin = user => dispatch => (
   ))
 );
 
-export const signout = () => dispatch => (
-  API.signout().then(user => (
-    dispatch(receiveCurrentUser(null))
-  ))
-);
+
+export const signout = () => dispatch => {
+  return API.signout()
+    .then(
+      () => {
+        dispatch(receiveCurrentUser(null));
+        dispatch(clearStore());
+      }
+    );
+};
