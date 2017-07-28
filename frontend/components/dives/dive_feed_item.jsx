@@ -14,13 +14,15 @@ class DiveFeedItem extends React.Component {
     return (
 
       <li className="dive-feed-item">
-        <div className="dive-info">
+        <div className="feed-item-dive-info">
           <Link to={`/dives/${dive.id}`}>
             <span>{ dive.title }</span>
           </Link>
+
+          <span>{date.toDateString()}</span>
+          
         </div>
 
-        <span>{date.toDateString()}</span>
 
         <button onClick={destroyDive} className="delete-button">Delete</button>
 

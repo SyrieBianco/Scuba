@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import Actions from '../../actions/session_actions';
 import Dashboard from './dashboard';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ( { session } ) => {
+
   return {
-    //sections of state
+    currentUser: session.currentUser,
   };
 };
 
