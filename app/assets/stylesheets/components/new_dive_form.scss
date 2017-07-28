@@ -1,12 +1,5 @@
 @import "../base/colors";
 
-// form header
-
-.form-header {
-  margin-top: 45px;
-  margin-left: 23px;
-  font-size: 30px;
-}
 
 
 // grid making
@@ -41,7 +34,62 @@
   div:last-of-type {
     border: none;
   }
+
+  div.air-inputs {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  section.grid-maker {
+    label {
+      margin-top: 23px;
+    }
+  }
+
+  div.grid-maker {
+    padding: 0;
+    height: 35px;
+  }
 }
+
+.pressure-readings {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+
+    h3 {
+      text-align: center;
+      margin: 0 15px;
+      border-bottom: 1px solid darkgray;
+      padding: 8px
+  }
+
+    div {
+      padding: 10px;
+    }
+
+    label {
+      font-size: 13px;
+      margin: 0;
+      margin-top: 5px;
+      padding: 10px;
+
+        p {
+          color: $dark-gray;
+          font-size: 18px
+        }
+
+        input {
+          font-size: 16px;
+        }
+    }
+
+    label:first-of-type {
+      border-right: 1px solid $light-gray
+    }
+}
+
+
 
 
 // inputs
@@ -50,7 +98,7 @@
   display: flex;
   margin: 10px;
   align-items: center;
-
+  white-space: nowrap;
   // specific inputs
 
   .title-input {
@@ -98,6 +146,10 @@
     border: 1px grey solid;
     margin: 0 15px;
     padding: 3px;
+  }
+
+  input.pressure-input {
+    margin-right: 6px;
   }
 
   select {

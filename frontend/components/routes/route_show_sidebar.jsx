@@ -37,4 +37,4 @@ class RouteShowSidebar extends React.Component {
   }
 }
 
-export default withRouter(RouteShowSidebar)
+export default withRouter(RouteShowSidebar);

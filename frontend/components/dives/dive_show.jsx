@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import ShowMap from '../routes/show_map';
 
 class DiveShow extends React.Component {
 
   componentDidMount() {
-    this.props.fetchDive(this.props.diveId);
+    const { dive } = this.props;
+    this.props.fetchDive(dive.id);
+    this.props.fetchRoute(dive.route_id);
   }
   render() {
     const { dive } = this.props;
@@ -42,9 +44,6 @@ class DiveShow extends React.Component {
           </div>
 
           <figure className="route-fig">
-              <img className="sample-route-img"
-                src="http://res.cloudinary.com/syriebianco/image/upload/v1500995415/Screen_Shot_2017-07-25_at_8.09.47_AM_offhdm.png"
-                alt="dive route map"/>
           </figure>
 
         </div>
@@ -53,5 +52,6 @@ class DiveShow extends React.Component {
   );
 }
 }
+// <ShowMap route={dive.route}/>
 
 export default DiveShow;

@@ -10,6 +10,7 @@ class RouteShow extends React.Component {
   componentDidMount() {
     this.props.fetchRoute(this.props.routeId);
   }
+  
   render() {
     const { route } = this.props;
     // <li>Elevation change: {route.elevation_change}</li>
@@ -21,7 +22,7 @@ class RouteShow extends React.Component {
         <h2>Notes: {route.notes}</h2>
       </div>
 
-      <ShowMap route={this.props.route}/>
+      <ShowMap route={route}/>
     </div>
   );
 }

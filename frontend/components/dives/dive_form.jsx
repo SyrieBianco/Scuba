@@ -5,13 +5,13 @@ class DiveForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route_id: 1,
+      route_id: 0,
       title: '',
       notes: '',
       date: null,
+      start_time: "00:00",
+      end_time: "00:00",
       tank_size: 0,
-      start_time: 0,
-      end_time: 0,
       start_air_pressure: 0,
       end_air_pressure: 0
     };
@@ -31,7 +31,6 @@ class DiveForm extends React.Component {
   update(property) {
     const that = this;
     return e => {
-      console.log(that.state);
       return that.setState({ [property]: e.target.value});
     };
   }
@@ -74,7 +73,7 @@ class DiveForm extends React.Component {
                 <select
                     className="route-input"
                     value={this.state.route || ""}
-                    onChange={this.update('route')}
+                    onChange={this.update('route_id')}
                   >
 
                 <option value="" disabled="true">
@@ -119,20 +118,26 @@ class DiveForm extends React.Component {
         </div>
 
         <div className="air-inputs">
-          <label className="new-dive-form-headers"> Tank Size:
-            <input
-              className="pressure-input"
-              type="number"
-              value={this.state.tank_size}
-              onChange={this.update('tank_size')}
-              /> cu ft
-          </label>
 
-          <div className="pressure-readings">
+          <section className="grid-maker">
+            <div className="grid-maker"></div>
+            <label className="new-dive-form-headers"> Tank Size:
+              <input
+                className="pressure-input"
+                type="number"
+                placeholder="00.0"
+                value={this.state.tank_size}
+                onChange={this.update('tank_size')}
+                /> cu ft
+            </label>
+          </section>
 
+          <section className="pressure-readings">
 
-            <div className="pressure-reading-input">
-              <label className="new-dive-form-headers"> Initial Pressure Reading:
+            <h3>Pressure Readings</h3>
+
+            <div className="pressure-reading-inputs">
+              <label className="new-dive-form-headers"> <p>Initial:</p>
                 <input
                   className="pressure-input"
                   type="number"
@@ -141,7 +146,7 @@ class DiveForm extends React.Component {
                   /> psi
               </label>
 
-              <label className="new-dive-form-headers"> Final Pressure Reading:
+              <label className="new-dive-form-headers"> <p>Final:</p>
                 <input
                   className="pressure-input"
                   type="number"
@@ -150,7 +155,7 @@ class DiveForm extends React.Component {
                   /> psi
               </label>
             </div>
-          </div>
+          </section>
 
 
         </div>
