@@ -15,17 +15,53 @@ class Dashboard extends React.Component {
     this.props.fetchRoutes();
   }
 
-  render() {
-    const {currentUser, dives, routes} = this.props;
 
+
+
+
+  render() {
+
+    const {currentUser, dives, routes} = this.props;
     if ( !dives || !routes ) return null;
-    if ( dives.length === 0 || routes.length === 0 ) return null;
+
+    const emptyIndexMessage = (loggedDives, loggedRoutes) => {
+      if (loggedDives.length === 0 && loggedRoutes.length === 0) {
+        return (
+          <p className="empty-index">You haven't logged any dives yet!
+          <br/>
+          <Link className="inline-link" to="/new_dive">{"Log a dive "}</Link>
+          or
+          <Link className="inline-link" to="/new_route">{" create a route "}</Link>
+            to get started</p>
+        );
+      } else if (loggedDives.length === 0) {
+        return (
+          <p className="empty-index">You haven't logged any dives yet!
+          <br/>
+          <Link className="inline-link" to="/new_dive">{"Log a dive "}</Link>
+          or
+          <Link className="inline-link" to="/new_route">{" create a route "}</Link>
+            to get started</p>
+        );
+      } else return null;
+    };
 
     const {bestDive, bestRate} = Util.bestBreath(dives);
+
+    const bestDiveLink = () => (
+      !bestDive ? null :
+        <Link to={"dive/" + bestDive.id}>
+            {bestRate ? bestRate : "—" } cu ft per second
+        </Link>
+    );
+
+
 
     return (
       <div className="full-page-component">
         <h1 className="form-header">Dashboard</h1>
+        {emptyIndexMessage(dives, routes)}
+
         <div className="dashboard">
 
         <section className="Personal Data">
@@ -44,9 +80,9 @@ class Dashboard extends React.Component {
             </thead>
             <tbody>
               <tr>
-                <td>{ dives.length }</td>
-                <td>{ routes.length }</td>
-                <td>{ Util.totalTime(dives) }</td>
+                <td>{ dives.length === 0 ? "—" : dives.length }</td>
+                <td>{ routes.length === 0 ? "—" : routes.length }</td>
+                <td>{ Util.totalTime(dives) === 0 ? "—" : Util.totalTime(dives) }</td>
               </tr>
             </tbody>
           </table>
@@ -66,8 +102,8 @@ class Dashboard extends React.Component {
               <tbody>
                 <tr>
                   <th className="stats-sider">avg</th>
-                  <td>{Util.avgDiveTime(dives)}</td>
-                  <td>{Util.avgBreathingRate(dives)} cu ft per second</td>
+                  <td>{Util.avgDiveTime(dives) === 0 ? "—" : Util.avgDiveTime(dives)}</td>
+                  <td>{Util.avgBreathingRate(dives) === 0 ? "—" : Util.avgBreathingRate(dives)} cu ft per second</td>
                 </tr>
               </tbody>
 
@@ -77,9 +113,7 @@ class Dashboard extends React.Component {
                   <th className="stats-sider">best</th>
                   <td> — </td>
                   <td className="best-dive-link">
-                    <Link to={"dive/" + bestDive.id}>
-                      {bestRate} cu ft per second
-                    </Link>
+                    {bestDiveLink()}
                   </td>
 
                 </tr>
