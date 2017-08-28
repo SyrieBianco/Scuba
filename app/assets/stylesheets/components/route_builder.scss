@@ -9,12 +9,13 @@
 input#pac-input {
   position: absolute;
   z-index: 100000;
-  top: 142px;
+  top: 163px;
   left: 120px;
   border: none;
   border-radius: 2px;
   padding: 5px;
   background-color: white;
+  width: 160px;
 }
 
 input#pac-input:focus {
@@ -47,7 +48,7 @@ input#pac-input:focus {
   background: rgba(240, 240, 240, .85);
   position: absolute;
   top: 200px;
-  left: 30px;
+  left: 20px;
 
   padding: 10px;
 

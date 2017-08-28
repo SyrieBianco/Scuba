@@ -25,11 +25,33 @@ class ShowMap extends React.Component {
     this.bounds = new google.maps.LatLngBounds();
     this.state.latLngs.forEach(latLng => {
       this.pathLine.getPath().push(latLng);
-      this.bounds.extend(latLng)
+      this.bounds.extend(latLng);
     });
     this.map.fitBounds(this.bounds);
     this.map.panToBounds(this.bounds);
 
+    const latLng = this.map.getCenter();
+    const location = this.geocodeLocation(latLng);
+
+
+  }
+
+  geocodeLocation({lat, lng}){
+    const latLng = {lat: lat(), lng: lng()};
+    const geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode( { 'location': latLng}, (results, status) => {
+      if (status == 'OK') {
+        if (results[0]) {
+          console.log('results', results);
+          this.props.setLocation(results[0].formatted_address);
+        } else {
+          this.props.setLocation('Exact location not available');
+        }
+      } else {
+        this.props.setLocation('Exact location not available');
+      }
+    });
   }
 
   render() {
