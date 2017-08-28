@@ -12,7 +12,7 @@
 #### Generating Custom Mapping Routes
 
 
-![New Route](images/new_route.png)
+![New Route](./docs/images/new_route.png)
 
   Using the Google Maps API, the route builder enables users to create and save custom scuba diving routes. Clicking the map makes markers akin to google maps directions. Using Google's Place Autocomplete service, users can quickly search for an indicated location.
 
@@ -20,7 +20,7 @@
 #### Displaying User Routes
 
 
-![Dive Routes](images/dive_routes.png)
+![Dive Routes](./docs/images/dive_routes.png)
 
 The route index lists a user's saved routes. Each has a small instance of its path projected with the Google Maps API. Route information (title and distance) is displayed below this image.
 
@@ -28,7 +28,7 @@ The route index lists a user's saved routes. Each has a small instance of its pa
 #### Logging Personal Dives
 
 
-![New Dive](images/new_dive.png)
+![New Dive](./docs/images/new_dive.png)
 
 A core function of Scuba is to enable users to log their dives. Dives can store their distance, duration, air pressure delta, notes, and a title. Users also have the option to store a particular route that a dive followed.
 
@@ -36,15 +36,15 @@ A core function of Scuba is to enable users to log their dives. Dives can store 
 #### Displaying Previous Dives
 
 
-![Logged Dives](images/logged_dives.png)
+![Logged Dives](./docs/images/logged_dives.png)
 
 The dive feed page gives users a quick look that their stored dives. The feed is styled with a clear, straightforward perspective, helping users quickly and accurately interpret the data. Clicking one of the feed items takes the user to a more detailed and enlarged view of that dive.
 
 Additional Resources
 
-[Database Schema](./schema.md)
-[API Endpoints](./api-endpoints.md)
-[Sample Redux State](./sample-state.md)
+[Database Schema](./docs/schema.md)
+[API Endpoints](./docs/api-endpoints.md)
+[Sample Redux State](./docs/sample-state.md)
 
 ## Potential Features
 
