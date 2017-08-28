@@ -30,7 +30,7 @@ class DiveShow extends React.Component {
           <div className="dive-info">
 
             <div className="date-time-div">
-              <h3>Location:<p></p></h3>
+              <h3>Dive Site: <p>{route.name}</p></h3>
               <h3>Dive Date:
                 <p>{date.toDateString()}</p></h3>
               <h3>Time: <p>{time}</p></h3>

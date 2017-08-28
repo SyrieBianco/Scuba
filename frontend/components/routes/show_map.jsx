@@ -43,7 +43,6 @@ class ShowMap extends React.Component {
     geocoder.geocode( { 'location': latLng}, (results, status) => {
       if (status == 'OK') {
         if (results[0]) {
-          console.log('results', results);
           this.props.setLocation(results[0].formatted_address);
         } else {
           this.props.setLocation('Exact location not available');

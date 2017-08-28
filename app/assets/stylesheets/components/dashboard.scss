@@ -6,13 +6,36 @@
 
 .dashboard {
   display: flex;
+  justify-content: space-between;
+}
+
+.add-new-buttons {
+  display: flex;
   flex-direction: column;
 
-  width: 100%;
+  margin-top: 20px;
+
+  h2 {
+    padding: 10px;
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 20px;
+  }
+
+  .new-route-button {
+    margin: 10px;
+  }
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+
+  width: 75%;
 
   h2 {
     color: $blue;
     font-weight: 400;
+    font-size: 23px;
     // letter-spacing: .2em;
 
 

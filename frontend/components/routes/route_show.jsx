@@ -16,7 +16,6 @@ class RouteShow extends React.Component {
   }
 
   setLocation(location) {
-    console.log('setting location!', location);
     this.setState({location});
   }
 
@@ -25,18 +24,18 @@ class RouteShow extends React.Component {
     // <li>Elevation change: {route.elevation_change}</li>
     return (
     <div className="route-show-page">
+      <h2 className="form-header">{route.name}</h2>
 
       <div className="route-show-info">
-        <h2 className="form-header">{route.name}</h2>
-        <h2></h2>
-        <h2>Distance: {Math.round(100 * route.distance / 1609.34) / 100} miles</h2>
-        <h2>Notes: {route.notes}</h2>
+        <h2 className="route-info">Location: Near {this.state.location}</h2>
+        <h2 className="route-info">Distance: {Math.round(100 * route.distance / 1609.34) / 100} miles</h2>
+        <h2 className="route-info">Notes: {route.notes}</h2>
+        <ShowMap
+          setLocation={this.setLocation}
+          route={route}
+          />
       </div>
 
-      <ShowMap
-        setLocation={this.setLocation}
-        route={route}
-      />
 
     </div>
   );
