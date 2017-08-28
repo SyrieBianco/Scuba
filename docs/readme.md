@@ -40,11 +40,11 @@ A core function of Scuba is to enable users to log their dives. Dives can store 
 
 The dive feed page gives users a quick look that their stored dives. The feed is styled with a clear, straightforward perspective, helping users quickly and accurately interpret the data. Clicking one of the feed items takes the user to a more detailed and enlarged view of that dive.
 
-Additional Resources
+Additional Resources:
 
-[Database Schema](./schema.md)
-[API Endpoints](./api-endpoints.md)
-[Sample Redux State](./sample-state.md)
+* - [Database Schema](./schema.md)
+* - [API Endpoints](./api-endpoints.md)
+* - [Sample Redux State](./sample-state.md)
 
 ## Potential Features
 

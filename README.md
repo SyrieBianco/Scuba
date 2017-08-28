@@ -42,9 +42,9 @@ The dive feed page gives users a quick look that their stored dives. The feed is
 
 Additional Resources
 
-* -[Database Schema](./docs/schema.md)
-* -[API Endpoints](./docs/api-endpoints.md)
-* -[Sample Redux State](./docs/sample-state.md)
+   -  [Database Schema](./docs/schema.md)
+   -  [API Endpoints](./docs/api-endpoints.md)
+   -  [Sample Redux State](./docs/sample-state.md)
 
 ## Potential Features
 
