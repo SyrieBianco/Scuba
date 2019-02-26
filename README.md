@@ -1,8 +1,9 @@
-# Scuba
+# [Scuba](https://dyva.herokuapp.com/)
+
 
 ***
 
-[Scuba](http://www.scuba.fitness) is a full-stack web application inspired by Strava, but repurposed to log, map, and track scuba dives and relevant information. Scuba uses a combination of Ruby on Rails for the backend with a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+[Scuba](https://dyva.herokuapp.com/) is a full-stack web application inspired by Strava, but repurposed to log, map, and track scuba dives and relevant information. Scuba uses a combination of Ruby on Rails for the backend with a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
 ## Key Features
 ***
